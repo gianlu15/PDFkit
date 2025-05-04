@@ -1,6 +1,7 @@
-# pdftool
+# PDFtool
 
-An Electron application with React
+An Electron application with React for managing PDF files, currently under development.
+
 
 ## Recommended IDE Setup
 
