@@ -1,0 +1,26 @@
+{
+    "subtitleHome": "Seleziona l'operazione di modifica",
+    "navbarHelp": "Aiuto",
+    "navbarLanguage": "Lingua",
+    "navbarCredits": "Crediti",
+    "navbarSettings": "Impostazioni",
+    "selectLanguage": "Seleziona lingua",
+    "mergeTitle": "Unione",
+    "mergeDesc": "Unisci i tuoi PDF nell'ordine che desideri",
+    "splitTitle": "Dividi",
+    "splitDesc": "Separa i tuoi PDF nel modo che preferisci",
+    "removeTitle": "Rimuovi",
+    "removeDesc": "Elimina le pagine inutili",
+    "extractTitle": "Estrai",
+    "extractDesc": "Esporta le pagine più importanti",
+    "selectPDF": "Seleziona PDF",
+    "operationError": "Errore",
+    "wrongIntervals": "Intervalli non corretti",
+    "extractSettings": "Inserisci le pagine da esportare: ",
+    "extractButton": "Esporta pagine",
+    "extractSuccess":"Pagine esportate",
+    "removeSettings": "Inserisci le pagine da rimuovere: ",
+    "removeButton": "Rimuovi pagine",
+    "removeSuccess":"Pagine rimosse"
+}
+  

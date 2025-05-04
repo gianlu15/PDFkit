@@ -1,0 +1,60 @@
+@import './new.css';
+@import './card.css';
+@import './navbar.css';
+@import './page.css';
+@import './language.css';
+
+body {
+    overflow: hidden;
+    user-select: none;    
+}
+
+code {
+    font-weight: 600;
+    padding: 3px 5px;
+    border-radius: 2px;
+    background-color: var(--color-background-mute);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        SF Mono,
+        Menlo,
+        Consolas,
+        Liberation Mono,
+        monospace;
+    font-size: 85%;
+}
+
+#root{
+    min-height: 100vh;
+    min-width: 100%;
+    margin: 0;
+    display: flex;
+}
+
+.main-container{
+    flex: 1;   
+}
+
+.title {
+    font-size: 5vw;
+    font-family: 'Teko', sans-serif;
+    color: white;
+    margin-bottom: auto;
+}
+
+.titleContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.homeContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10vh;
+}
+  

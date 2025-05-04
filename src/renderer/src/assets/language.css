@@ -1,0 +1,39 @@
+.language-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    gap: 10vh;
+    padding: 2rem;
+}
+
+
+.language-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 240px);
+    grid-gap: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+
+.language-card{
+    background-color: #1c1d4e;
+    background: linear-gradient(270deg,rgba(60, 116, 194, 1) 0%, rgba(18, 57, 115, 1) 100%);
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05), 0px 8px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: box-shadow .25s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.language-title{
+    margin: 15px 0 15px 0;
+}
