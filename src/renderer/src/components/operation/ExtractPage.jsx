@@ -92,7 +92,7 @@ function ExtractPage() {
                     <input
                         className="input-pages"
                         type="text"
-                        placeholder="(ex: 1-3,5,8-10)"
+                        placeholder="(ex: 1-3, 7, 18-25)"
                         value={extractInput}
                         onChange={(e) => setExtractInput(e.target.value)}
                     />

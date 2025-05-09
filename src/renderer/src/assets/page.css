@@ -20,6 +20,19 @@
     border-style: dashed;
 }
 
+.split-select-PDF {
+    height: 40vh;
+    width: 90%;
+    background-color: rgba(24, 24, 27, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: #8A8A8A;
+    border-style: dashed;
+}
+
 .select-button {
     width: 30%;
     cursor: pointer;
@@ -40,8 +53,14 @@
     background: linear-gradient(90deg, rgba(233, 195, 148, 1) 0%, rgba(255, 50, 50, 1) 100%);
 }
 
-#select-extract-button, #confirm-extract-button{
-    background: linear-gradient(90deg,rgba(70, 137, 140, 1) 0%, rgba(115, 18, 115, 1) 100%);
+#select-extract-button,
+#confirm-extract-button {
+    background: linear-gradient(90deg, rgba(70, 137, 140, 1) 0%, rgba(115, 18, 115, 1) 100%);
+}
+
+#select-split-button,
+#confirm-split-button {
+    background: linear-gradient(90deg, rgba(234, 237, 85, 1) 0%, rgba(44, 115, 18, 1) 100%);
 }
 
 .file-card {
@@ -83,6 +102,18 @@
     border-radius: 15px;
 }
 
+.split-operation-settings {
+    height: 30vh;
+    width: 75%;
+    background-color: rgba(24, 24, 27);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05), 0px 8px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
 .input-settings {
     display: flex;
     flex-direction: row;
@@ -91,10 +122,46 @@
     margin: 5px;
 }
 
+.split-input-interval-settings {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+    align-items: center;
+    margin: 5px;
+    background-color: #242121;
+}
+
+.split-select-interval-type {
+    display: flex;
+    flex-direction: column;
+}
+
+.split-interval-type {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.split-interval-type.active {
+    padding: 10px;
+    opacity: 0.5;
+    background-color: rgb(23, 23, 25);
+}
+
+#split-interval-type-one {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+#split-interval-type-two {
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top: 1px #8A8A8A solid;
+}
+
 .input-pages {
     border-radius: 12px;
     padding: 0.5rem;
-    background-color: rgba(24, 24, 27);
+    background-color: rgb(31, 31, 33);
     border: 1px solid #8A8A8A;
     color: #ffffff;
 }

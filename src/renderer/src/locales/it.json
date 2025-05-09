@@ -21,6 +21,11 @@
     "extractSuccess":"Pagine esportate",
     "removeSettings": "Inserisci le pagine da rimuovere: ",
     "removeButton": "Rimuovi pagine",
-    "removeSuccess":"Pagine rimosse"
+    "removeSuccess":"Pagine rimosse",
+    "splitSettings": "Inserisci le pagine: ",
+    "splitButton": "Dividi documento",
+    "splitSuccess":"Documento diviso",
+    "splitCustomInterval": "Intervalli personalizzati",
+    "splitFixedInterval": "Intervallo fisso"
 }
   

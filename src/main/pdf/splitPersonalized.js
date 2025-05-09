@@ -3,7 +3,7 @@ const fs = require('fs/promises');
 const os = require('os');
 const { PDFDocument } = require('pdf-lib');
 
-export async function handleSplitRanges(event, file, intervals) {
+export async function handleSplitPersonalizedIntervals(event, file, intervals) {
   try {
     const pdfBytes = await fs.readFile(file[0]);
     const pdf = await PDFDocument.load(pdfBytes);
@@ -25,7 +25,7 @@ export async function handleSplitRanges(event, file, intervals) {
       slicedPages.forEach(page => slicedPdf.addPage(page));
 
       const outputBytes = await slicedPdf.save();
-      await fs.writeFile(path.join(dir, `${base}_parte${partCounter}.pdf`), outputBytes);
+      await fs.writeFile(path.join(dir, `${base}_part${partCounter}.pdf`), outputBytes);
 
       partCounter++;
     }

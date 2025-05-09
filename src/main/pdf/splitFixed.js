@@ -3,7 +3,7 @@ const fsInterval = require('fs/promises');
 const osInterval = require('os');
 const { PDFDocument: PDFDocInterval } = require('pdf-lib');
 
-export async function handleSplitInterval(event, file, pagesPerSplit) {
+export async function handleSplitFixedInterval(event, file, pagesPerSplit) {
   try {
     const pdfBytes = await fsInterval.readFile(file[0]);
     const pdf = await PDFDocInterval.load(pdfBytes);
@@ -26,7 +26,7 @@ export async function handleSplitInterval(event, file, pagesPerSplit) {
       slicedPages.forEach(page => slicedPdf.addPage(page));
 
       const outputBytes = await slicedPdf.save();
-      const outputName = `${base}_parte${partCounter}_di_${totalParts}.pdf`;
+      const outputName = `${base}_part${partCounter}_of_${totalParts}.pdf`;
       await fsInterval.writeFile(pathInterval.join(dir, outputName), outputBytes);
 
       partCounter++;

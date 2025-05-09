@@ -25,7 +25,7 @@ export async function handleExtraction(event, file, intervals) {
       slicedPages.forEach(page => slicedPdf.addPage(page));
 
       const outputBytes = await slicedPdf.save();
-      await fs.writeFile(path.join(dir, `${base}_parte${partCounter}.pdf`), outputBytes);
+      await fs.writeFile(path.join(dir, `${base}_part${partCounter}.pdf`), outputBytes);
 
       partCounter++;
     }

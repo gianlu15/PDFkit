@@ -16,10 +16,15 @@
     "selectPDF": "Seleccionar PDF",
     "operationError": "Error",
     "wrongIntervals": "Intervalos incorrectos",
-    "extractSettings": "Introduce las páginas a exportar:",
+    "extractSettings": "Introduce las páginas a exportar: ",
     "extractButton": "Exportar páginas",
     "extractSuccess": "Páginas exportadas",
-    "removeSettings": "Introduce las páginas a eliminar:",
+    "removeSettings": "Introduce las páginas a eliminar: ",
     "removeButton": "Eliminar páginas",
-    "removeSuccess": "Páginas eliminadas"
+    "removeSuccess": "Páginas eliminadas",
+    "splitButton": "Dividir documento",
+    "splitSuccess": "Documento dividido",
+    "splitSettings": "Introduce las páginas: ",
+    "splitCustomInterval": "Intervalos personalizados",
+    "splitFixedInterval": "Intervalo fijo"
 }

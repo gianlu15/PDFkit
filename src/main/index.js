@@ -5,8 +5,8 @@ import icon from '../../resources/icon.png?asset'
 
 // Import dei moduli PDF
 import { handleMerge } from './pdf/merge.js'
-import { handleSplitRanges } from './pdf/splitByRanges.js'
-import { handleSplitInterval } from './pdf/splitByInterval.js'
+import { handleSplitFixedInterval } from './pdf/splitFixed.js'
+import { handleSplitPersonalizedIntervals } from './pdf/splitPersonalized.js'
 import { handleExtraction } from './pdf/extraction.js'
 import { handleRemove } from './pdf/remove.js'
 
@@ -55,8 +55,8 @@ app.whenReady().then(() => {
 
   // ✅ Qui aggiungiamo le tue API reali:
   ipcMain.handle('merge-pdfs', handleMerge)
-  ipcMain.handle('split-pdfs', handleSplitRanges)
-  ipcMain.handle('split-interval-pdfs', handleSplitInterval)
+  ipcMain.handle('split-fixed-pdfs', handleSplitFixedInterval)
+  ipcMain.handle('split-personalized-pdfs', handleSplitPersonalizedIntervals)
   ipcMain.handle('extraction-pdfs', handleExtraction)
   ipcMain.handle('remove-pdfs', handleRemove)
 

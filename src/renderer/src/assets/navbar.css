@@ -38,7 +38,7 @@ a {
 	height: 3rem;
 	border-radius: 8px;
 	position: relative;
-	&:hover, &:focus, &.active {
+	&:hover {
 		background-color: #30305a;
 		outline: 0;
 		

@@ -8,8 +8,8 @@ const api = {
   selectPDFs: () => ipcRenderer.invoke('dialog:openFiles'),
   readFileAsArrayBuffer: (filePath) => fs.promises.readFile(filePath),
   mergePDFs: (filePaths, fileName) => ipcRenderer.invoke('merge-pdfs', filePaths, fileName),
-  splitPDF: (filePaths, intervals) => ipcRenderer.invoke('split-pdfs', filePaths, intervals),
-  splitIntervalPDF: (filePaths, interval) => ipcRenderer.invoke('split-interval-pdfs', filePaths, interval),
+  splitFixedPDF: (filePaths, intervals) => ipcRenderer.invoke('split-fixed-pdfs', filePaths, intervals),
+  splitPersonalizedPDF: (filePaths, interval) => ipcRenderer.invoke('split-personalized-pdfs', filePaths, interval),
   extractionPDF: (filePaths, intervals) => ipcRenderer.invoke('extraction-pdfs', filePaths, intervals),
   removePDF: (filePaths, intervals) => ipcRenderer.invoke('remove-pdfs', filePaths, intervals)
 }
