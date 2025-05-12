@@ -18,14 +18,17 @@
     "wrongIntervals": "Intervalli non corretti",
     "extractSettings": "Inserisci le pagine da esportare: ",
     "extractButton": "Esporta pagine",
-    "extractSuccess":"Pagine esportate",
+    "extractSuccess": "Pagine esportate",
     "removeSettings": "Inserisci le pagine da rimuovere: ",
     "removeButton": "Rimuovi pagine",
-    "removeSuccess":"Pagine rimosse",
+    "removeSuccess": "Pagine rimosse",
     "splitSettings": "Inserisci le pagine: ",
     "splitButton": "Dividi documento",
-    "splitSuccess":"Documento diviso",
+    "splitSuccess": "Documento diviso",
     "splitCustomInterval": "Intervalli personalizzati",
-    "splitFixedInterval": "Intervallo fisso"
+    "splitFixedInterval": "Intervallo fisso",
+    "mergeSucces": "PDF uniti",
+    "mergeMaxError": "Selezionare massimo 10 PDF",
+    "mergeSettings": "Nome PDF unito: ",
+    "mergeButton": "Unisci"
 }
-  

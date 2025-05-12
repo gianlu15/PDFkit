@@ -26,5 +26,9 @@
     "splitSuccess": "Documento dividido",
     "splitSettings": "Introduce las páginas: ",
     "splitCustomInterval": "Intervalos personalizados",
-    "splitFixedInterval": "Intervalo fijo"
+    "splitFixedInterval": "Intervalo fijo",
+    "mergeSucces": "PDF unidos",
+    "mergeMaxError": "Selecciona hasta 10 PDF",
+    "mergeSettings": "Nombre del PDF unido:",
+    "mergeButton": "Unir"
 }

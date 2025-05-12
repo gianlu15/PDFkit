@@ -26,5 +26,9 @@
     "splitSuccess": "Document divisé",
     "splitSettings": "Entrez les pages: ",
     "splitCustomInterval": "Intervalles personnalisés",
-    "splitFixedInterval": "Intervalle fixe"
+    "splitFixedInterval": "Intervalle fixe",
+    "mergeSucces": "PDF fusionnés",
+    "mergeMaxError": "Sélectionnez jusqu'à 10 PDF",
+    "mergeSettings": "Nom du PDF fusionné :",
+    "mergeButton": "Fusionner"
 }

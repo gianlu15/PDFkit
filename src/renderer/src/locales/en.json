@@ -26,5 +26,9 @@
     "splitSuccess": "Document split",
     "splitSettings": "Enter the pages: ",
     "splitCustomInterval": "Custom intervals",
-    "splitFixedInterval": "Fixed interval"
+    "splitFixedInterval": "Fixed interval",
+    "mergeSucces": "PDFs merged",
+    "mergeMaxError": "Select up to 10 PDFs",
+    "mergeSettings": "Merged PDF name:",
+    "mergeButton": "Merge"
 }

@@ -1,0 +1,112 @@
+.select-multiple-PDF {
+    height: 50vh;
+    width: 90%;
+    background-color: rgba(24, 24, 27, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: #8A8A8A;
+    border-style: dashed;
+}
+
+.select-multiple-PDF.active {
+    height: 50vh;
+    width: 90%;
+    background-color: rgba(24, 24, 27);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05), 0px 8px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));  /* 4 colonne di uguale larghezza */
+    grid-template-rows: repeat(2, 50%);    /* 2 righe, altezza automatica */
+    align-items: stretch;
+    justify-content: stretch;
+    border-radius: 15px;
+    border: #8A8A8A;
+    padding: 10px;
+}
+
+.file-card-component{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.add-button {
+    width: min-content;
+    height: min-content;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75em 1em;
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 2em;
+    font-size: 1rem;
+    border: 0px;
+    box-shadow: 0 0.7em 1.5em -0.5em hsla(0, 0%, 0%, 0.745);
+}
+
+.add-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.2em 1.5em -0.5em hsla(0, 0%, 0%, 0.745);
+    opacity: 0.8;
+}
+
+.merge-settings {
+    height: 25vh;
+    width: 75%;
+    background-color: rgba(24, 24, 27);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05), 0px 8px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+
+.merge-file-card {
+    justify-self: center; 
+    align-self: center;  
+    height: 80%;
+    background-color: rgb(45, 45, 46);
+    border-radius: 6px;
+    padding: 4px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+;
+}
+
+.merge-file-card img {
+    padding: 2px;
+    margin-top: 3px;
+    width: 90%;
+    height: 45%;
+    border-radius: 4px;
+    flex-grow: 10;
+}
+
+.merge-pdf-name {
+    overflow: hidden;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+
+
+#select-merge-button,
+#confirm-merge-button {
+    background: linear-gradient(90deg, rgba(115, 18, 18, 1) 0%, rgba(255, 115, 18, 1) 100%);
+}
