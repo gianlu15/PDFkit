@@ -58,7 +58,7 @@ function MergePage() {
             setResultMessage(success ? t('mergeSuccess') : t('operationError'));
         } catch (err) {
             console.error(err);
-            setResultMessage(t('wrongIntervals'));
+            setResultMessage(t('operationError'));
         }
     };
 

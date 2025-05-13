@@ -7,12 +7,13 @@ import { useLanguage } from "../../contexts/LanguageContext";
 
 pdfjsLib.GlobalWorkerOptions.workerPort = new Worker();
 
-function ExtractPage() {
+function WatermarkPage() {
     const { t } = useLanguage();
 
     const [selectedFile, setSelectedFile] = useState(null);
     const [thumbnail, setThumbnail] = useState(null);
-    const [extractInput, setExtractInput] = useState('');
+    const [text, setTextWatermark] = useState('');
+    const [opacity, setOpacity] = useState(30);
     const [resultMessage, setResultMessage] = useState('');
 
     const handleSelectFile = async () => {
@@ -42,69 +43,59 @@ function ExtractPage() {
         }
     };
 
-    const getIntervals = (intervalString) => {
-        return intervalString
-            .split(',')
-            .map(part => {
-                const [startStr, endStr] = part.split('-').map(s => s.trim());
-                const start = parseInt(startStr);
-                const end = endStr ? parseInt(endStr) : start;
 
-                if (isNaN(start) || isNaN(end) || start < 1 || end < start) {
-                    throw new Error(`Wrong interval"${part}"`);
-                }
-
-                return [start, end];
-            });
-    };
-
-    const handleExtract = async () => {
+    const handleWatermark = async () => {
         try {
-            const intervals = getIntervals(extractInput.trim());
-            const success = await window.api.extractionPDF([selectedFile], intervals);
-            setResultMessage(success ? t('extractSuccess') : t('operationError'));
+            const success = await window.api.watermarkPDF([selectedFile], text, opacity);
+            setResultMessage(success ? t('watermarkSucces') : t('operationError'));
         } catch (err) {
             console.error(err);
-            setResultMessage(t('wrongIntervals'));
+            setResultMessage(t('operationError'));
         }
     };
 
     return (
         <div className="one-pdf-container">
             <div className="title-container">
-                <Subtitle text={t('extractDesc')} />
+                <Subtitle text={t('watermarkDesc')} />
             </div>
             <div className="select-PDF">
                 {selectedFile ? (
                     <div className="file-card">
-                        {thumbnail && <img src={thumbnail} alt="PDF Preview"/>}
+                        {thumbnail && <img src={thumbnail} alt="PDF Preview" />}
                         <p className="pdf-name">{selectedFile.split('/').pop()}</p>
                     </div>
                 ) : (
-                    <button className="select-button" id="select-extract-button" onClick={handleSelectFile}>
+                    <button className="select-button" id="select-watermark-button" onClick={handleSelectFile}>
                         <span className="button-text">{t('selectPDF')}</span>
                     </button>
                 )}
             </div>
+
             <div className="operation-settings">
                 <div className="input-settings">
-                    <label className="button-text">{t('extractSettings')}</label>
+                    <label className="button-text">{t('watermarkSettings')}</label>
                     <input
                         className="input-pages"
                         type="text"
-                        placeholder="(ex: 1-3, 7, 18-25)"
-                        value={extractInput}
-                        onChange={(e) => setExtractInput(e.target.value)}
+                        placeholder="(ex. FACSIMILE)"
+                        value={text}
+                        onChange={(e) => setTextWatermark(e.target.value)}
                     />
+                </div>
+                <div className="input-settings">
+                    <label className="button-text">{t('watermarkOpacity')} </label>
+                    <input type="range" min="1" max="100" className='slider' value={opacity}
+                          onChange={(e) => setOpacity(Number(e.target.value))}/>
                 </div>
                 <div className="confirm-settings">
                     <button
                         className="confirm-button"
-                        id="confirm-extract-button"
-                        onClick={handleExtract}
-                        disabled={!selectedFile || !extractInput.trim()}
+                        id="confirm-watermark-button"
+                        onClick={handleWatermark}
+                        disabled={!selectedFile || !text.trim()}
                     >
-                        {t('extractButton')}
+                        {t('watermarkButton')}
                     </button>
                     <p className="output-result">{resultMessage}</p>
                 </div>
@@ -113,4 +104,4 @@ function ExtractPage() {
     );
 }
 
-export default ExtractPage;
+export default WatermarkPage;

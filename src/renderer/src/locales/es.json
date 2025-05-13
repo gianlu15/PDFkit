@@ -13,6 +13,8 @@
     "removeDesc": "Elimina las páginas innecesarias",
     "extractTitle": "Extraer",
     "extractDesc": "Exporta las páginas más importantes",
+    "watermarkTitle": "Marca de agua",
+    "watermarkDesc": "Añade una marca de agua personalizada",
     "selectPDF": "Seleccionar PDF",
     "operationError": "Error",
     "wrongIntervals": "Intervalos incorrectos",
@@ -29,6 +31,10 @@
     "splitFixedInterval": "Intervalo fijo",
     "mergeSucces": "PDF unidos",
     "mergeMaxError": "Selecciona hasta 10 PDF",
-    "mergeSettings": "Nombre del PDF unido:",
-    "mergeButton": "Unir"
+    "mergeSettings": "Nombre del PDF unido: ",
+    "mergeButton": "Unir",
+    "watermarkSucces": "Marca de agua aplicada",
+    "watermarkSettings": "Texto de la marca de agua: ",
+    "watermarkOpacity": "Opacidad: ",
+    "watermarkButton": "Aplicar"
 }

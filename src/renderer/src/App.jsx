@@ -6,6 +6,8 @@ import RemovePage from "./components/operation/RemovePage";
 import ExtractPage from "./components/operation/ExtractPage";
 import LanguagePage from "./components/LanguagePage";
 import SplitPage from "./components/operation/SplitPage";
+import WatermarkPage from "./components/operation/WatermarkPage";
+
 
 function App() {
     const [currentPage, setCurrentPage] = useState("home");
@@ -21,6 +23,7 @@ function App() {
                 {currentPage === "remove" && <RemovePage/>}
                 {currentPage === "extract" && <ExtractPage/>}
                 {currentPage === "split" && <SplitPage/>}
+                {currentPage === "watermark" && <WatermarkPage/>}
                 {currentPage === "language" && <LanguagePage/>}
                 {/* Qui aggiungerai anche SplitPage, RemovePage, ExtractPage ecc */}
             </div>

@@ -13,6 +13,8 @@
     "removeDesc": "Supprimez les pages inutiles",
     "extractTitle": "Extraire",
     "extractDesc": "Exportez les pages les plus importantes",
+    "watermarkTitle": "Filigrane",
+    "watermarkDesc": "Ajoutez un filigrane personnalisé",
     "selectPDF": "Sélectionner un PDF",
     "operationError": "Erreur",
     "wrongIntervals": "Intervalles incorrects",
@@ -29,6 +31,10 @@
     "splitFixedInterval": "Intervalle fixe",
     "mergeSucces": "PDF fusionnés",
     "mergeMaxError": "Sélectionnez jusqu'à 10 PDF",
-    "mergeSettings": "Nom du PDF fusionné :",
-    "mergeButton": "Fusionner"
+    "mergeSettings": "Nom du PDF fusionné: ",
+    "mergeButton": "Fusionner",
+    "watermarkSucces": "Filigrane appliquée",
+    "watermarkSettings": "Texte du filigrane: ",
+    "watermarkOpacity": "Opacité: ",
+    "watermarkButton": "Appliquer"
 }

@@ -98,7 +98,7 @@ function SplitPage() {
             <div className="split-select-PDF">
                 {selectedFile ? (
                     <div className="file-card">
-                        {thumbnail && <img src={thumbnail} alt="PDF Preview" style={{ width: '150px', marginBottom: '1rem' }} />}
+                        {thumbnail && <img src={thumbnail} alt="PDF Preview" />}
                         <p className="pdf-name">{selectedFile.split('/').pop()}</p>
                     </div>
                 ) : (

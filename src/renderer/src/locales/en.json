@@ -13,6 +13,8 @@
     "removeDesc": "Delete unnecessary pages",
     "extractTitle": "Extract",
     "extractDesc": "Export the most important pages",
+    "watermarkTitle": "Watermark",
+    "watermarkDesc": "Add a custom watermark",
     "selectPDF": "Select PDF",
     "operationError": "Error",
     "wrongIntervals": "Incorrect intervals",
@@ -30,5 +32,9 @@
     "mergeSucces": "PDFs merged",
     "mergeMaxError": "Select up to 10 PDFs",
     "mergeSettings": "Merged PDF name:",
-    "mergeButton": "Merge"
+    "mergeButton": "Merge",
+    "watermarkSucces": "Watermark applied",
+    "watermarkSettings": "Watermark text: ",
+    "watermarkOpacity": "Opacity: ",
+    "watermarkButton": "Apply"
 }

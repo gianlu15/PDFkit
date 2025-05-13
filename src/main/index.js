@@ -9,6 +9,7 @@ import { handleSplitFixedInterval } from './pdf/splitFixed.js'
 import { handleSplitPersonalizedIntervals } from './pdf/splitPersonalized.js'
 import { handleExtraction } from './pdf/extraction.js'
 import { handleRemove } from './pdf/remove.js'
+import { handleWatermark } from './pdf/watermark.js'
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -33,7 +34,6 @@ function createWindow() {
     return { action: 'deny' }
   })
 
-  // Carica URL o file a seconda dell'ambiente
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
     mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
   } else {
@@ -59,6 +59,7 @@ app.whenReady().then(() => {
   ipcMain.handle('split-personalized-pdfs', handleSplitPersonalizedIntervals)
   ipcMain.handle('extraction-pdfs', handleExtraction)
   ipcMain.handle('remove-pdfs', handleRemove)
+  ipcMain.handle('watermark-pdf', handleWatermark)
 
   ipcMain.handle('dialog:openFiles', async () => {
     const result = await dialog.showOpenDialog({

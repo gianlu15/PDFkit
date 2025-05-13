@@ -74,6 +74,11 @@
     background: linear-gradient(90deg, rgba(234, 237, 85, 1) 0%, rgba(44, 115, 18, 1) 100%);
 }
 
+#select-watermark-button,
+#confirm-watermark-button {
+    background: linear-gradient(90deg, rgba(71, 54, 166, 1) 0%, rgba(18, 102, 115, 1) 100%);
+}
+
 .file-card {
     height: 80%;
     background-color: rgb(45, 45, 46);
@@ -85,10 +90,10 @@
 }
 
 .file-card img {
-    width: 3vw;
+    width: 150px;
     height: 90%;
     border-radius: 8px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
     flex-grow: 10;
 }
 
@@ -99,6 +104,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 150px;
+    margin: 0px;
 }
 
 .operation-settings {
@@ -201,7 +207,7 @@
     box-shadow: 0 0.7em 1.5em -0.5em hsla(0, 0%, 0%, 0.745);
 }
 
-.confirm-button:active{
+.confirm-button:active {
     transform: translateY(-1px);
     box-shadow: 0 0.2em 1.5em -0.5em hsla(0, 0%, 0%, 0.745);
     opacity: 0.8;
@@ -233,4 +239,12 @@
         'Droid Sans',
         'Helvetica Neue',
         sans-serif;
+}
+
+.slider {
+  width: 20%;
+  height: 25px;
+  opacity: 0.7;
+  outline: none;
+  transition: opacity .2s;
 }
