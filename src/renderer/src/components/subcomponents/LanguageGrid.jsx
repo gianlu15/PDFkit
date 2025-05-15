@@ -6,7 +6,7 @@ function LanguageGrid() {
       <LanguageCard title="Italiano" langCode="it" />
       <LanguageCard title="English" langCode="en" />
       <LanguageCard title="Français" langCode="fr" />
-      <LanguageCard title="Esapnol" langCode="es" />
+      <LanguageCard title="Espanol" langCode="es" />
     </div>
   );
 }

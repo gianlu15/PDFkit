@@ -7,16 +7,30 @@ import extractIcon from "../../assets/icon/extract.svg";
 import watermarkIcon from "../../assets/icon/watermark.svg";
 import { useLanguage } from "../../contexts/LanguageContext";
 
-
 function OperationGrid({ onSelectOperation }) {
-
     const { t } = useLanguage();
 
-    const [background, setBackground] = useState("linear-gradient(180deg, rgba(18, 57, 115, 1) 0%, rgba(20, 27, 38, 1) 45%)");
+    const defaultBackground = "linear-gradient(180deg, rgba(18, 57, 115, 1) 0%, rgba(20, 27, 38, 1) 45%)";
+    const [background, setBackground] = useState(defaultBackground);
+    const [locked, setLocked] = useState(false);
 
     useEffect(() => {
         document.body.style.background = background;
     }, [background]);
+
+    // Sblocca lo sfondo quando cambia pagina, dopo un delay
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setLocked(false);
+        }, 500); // durata della transizione
+        return () => clearTimeout(timeout);
+    }, [onSelectOperation]);
+
+    const handleSelect = (page, bg) => {
+        setLocked(true);
+        setBackground(bg);
+        onSelectOperation(page);
+    };
 
     return (
         <div className="grid">
@@ -24,44 +38,44 @@ function OperationGrid({ onSelectOperation }) {
                 title={t('mergeTitle')}
                 desc={t('mergeDesc')}
                 icon={mergeIcon}
-                onClick={() => onSelectOperation('merge')}
-                onMouseEnter={() => setBackground("linear-gradient(180deg, rgb(255, 115, 18) 0%, rgba(20, 27, 38, 1) 45%)")}
-                onMouseLeave={() => setBackground("linear-gradient(180deg, rgba(18, 57, 115, 1) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onClick={() => handleSelect('merge', "linear-gradient(180deg, rgb(255, 115, 18) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onMouseEnter={() => !locked && setBackground("linear-gradient(180deg, rgb(255, 115, 18) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onMouseLeave={() => !locked && setBackground(defaultBackground)}
             />
             <OperationCard
                 title={t('splitTitle')}
                 desc={t('splitDesc')}
                 icon={splitIcon}
-                onClick={() => onSelectOperation('split')}
-                onMouseEnter={() => setBackground("linear-gradient(180deg, rgb(44, 115, 18) 0%, rgba(20, 27, 38, 1) 45%)")}
-                onMouseLeave={() => setBackground("linear-gradient(180deg, rgba(18, 57, 115, 1) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onClick={() => handleSelect('split', "linear-gradient(180deg, rgb(44, 115, 18) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onMouseEnter={() => !locked && setBackground("linear-gradient(180deg, rgb(44, 115, 18) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onMouseLeave={() => !locked && setBackground(defaultBackground)}
             />
             <OperationCard
                 title={t('removeTitle')}
                 desc={t('removeDesc')}
                 icon={removeIcon}
-                onClick={() => onSelectOperation('remove')}
-                onMouseEnter={() => setBackground("linear-gradient(180deg, rgb(255, 50, 50) 0%, rgba(20, 27, 38, 1) 45%)")}
-                onMouseLeave={() => setBackground("linear-gradient(180deg, rgba(18, 57, 115, 1) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onClick={() => handleSelect('remove', "linear-gradient(180deg, rgb(255, 50, 50) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onMouseEnter={() => !locked && setBackground("linear-gradient(180deg, rgb(255, 50, 50) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onMouseLeave={() => !locked && setBackground(defaultBackground)}
             />
             <OperationCard
                 title={t('extractTitle')}
                 desc={t('extractDesc')}
                 icon={extractIcon}
-                onClick={() => onSelectOperation('extract')}
-                onMouseEnter={() => setBackground("linear-gradient(180deg, rgb(115, 18, 115) 0%, rgba(20, 27, 38, 1) 45%)")}
-                onMouseLeave={() => setBackground("linear-gradient(180deg, rgba(18, 57, 115, 1) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onClick={() => handleSelect('extract', "linear-gradient(180deg, rgb(115, 18, 115) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onMouseEnter={() => !locked && setBackground("linear-gradient(180deg, rgb(115, 18, 115) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onMouseLeave={() => !locked && setBackground(defaultBackground)}
             />
             <OperationCard
                 title={t('watermarkTitle')}
                 desc={t('watermarkDesc')}
                 icon={watermarkIcon}
-                onClick={() => onSelectOperation('watermark')}
-                onMouseEnter={() => setBackground("linear-gradient(180deg, rgb(18, 102, 115) 0%, rgba(20, 27, 38, 1) 45%)")}
-                onMouseLeave={() => setBackground("linear-gradient(180deg, rgba(18, 57, 115, 1) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onClick={() => handleSelect('watermark', "linear-gradient(180deg, rgb(18, 102, 115) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onMouseEnter={() => !locked && setBackground("linear-gradient(180deg, rgb(18, 102, 115) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onMouseLeave={() => !locked && setBackground(defaultBackground)}
             />
         </div>
-    )
+    );
 }
 
 export default OperationGrid;
