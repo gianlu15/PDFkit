@@ -14,6 +14,10 @@ function WatermarkPage() {
     const [thumbnail, setThumbnail] = useState(null);
     const [text, setTextWatermark] = useState('');
     const [opacity, setOpacity] = useState(30);
+    const [rotation, setRotation] = useState(45);
+    const [size, setSize] = useState("normal");
+    const [postion, setPosition] = useState("center");
+
     const [resultMessage, setResultMessage] = useState('');
 
     const handleSelectFile = async () => {
@@ -43,10 +47,25 @@ function WatermarkPage() {
         }
     };
 
+    const handleRotationChange = (e) => {
+        const inputValue = e.target.value;
+
+        if (inputValue === "") {
+            setRotation(0)
+            return;
+        }
+
+        const parsed = parseInt(inputValue, 10);
+
+        if (!isNaN(parsed) && parsed >= 0 && parsed <= 360) {
+            setRotation(parsed);
+        }
+    };
+
 
     const handleWatermark = async () => {
         try {
-            const success = await window.api.watermarkPDF([selectedFile], text, opacity);
+            const success = await window.api.watermarkPDF([selectedFile], text, opacity, postion, rotation, size);
             setResultMessage(success ? t('watermarkSucces') : t('operationError'));
         } catch (err) {
             console.error(err);
@@ -73,20 +92,50 @@ function WatermarkPage() {
             </div>
 
             <div className="operation-settings">
-                <div className="input-settings">
-                    <label className="button-text">{t('watermarkSettings')}</label>
-                    <input
-                        className="input-pages"
-                        type="text"
-                        placeholder="(ex. FACSIMILE)"
-                        value={text}
-                        onChange={(e) => setTextWatermark(e.target.value)}
-                    />
-                </div>
-                <div className="input-settings">
-                    <label className="button-text">{t('watermarkOpacity')} </label>
-                    <input type="range" min="1" max="100" className='slider' value={opacity}
-                          onChange={(e) => setOpacity(Number(e.target.value))}/>
+                <div className='scrollable-settings'>
+                    <div className="input-settings">
+                        <label className="button-text">{t('watermarkSettings')}</label>
+                        <input
+                            className="input-pages"
+                            type="text"
+                            maxLength={10}
+                            placeholder="(ex. FACSIMILE)"
+                            value={text}
+                            onChange={(e) => setTextWatermark(e.target.value)}
+                        />
+                    </div>
+                    <div className="input-settings">
+                        <label className="button-text">{t('watermarkOpacity')} </label>
+                        <input type="range" min="1" max="100" className='slider' value={opacity}
+                            onChange={(e) => setOpacity(Number(e.target.value))} />
+                    </div>
+                    <div className="input-settings">
+                        <label className="button-text">{t('watermarkRotation')}</label>
+                        <select value={rotation} onChange={(e) => setRotation(Number(e.target.value))}>
+                            <option value={0}>0°</option>
+                            <option value={45}>45°</option>
+                            <option value={90}>90°</option>
+                            <option value={180}>180°</option>
+                        </select>
+                    </div>
+                    <div className="input-settings">
+                        <label className="button-text">{t('watermarkPosition')}</label>
+                        <select value={postion} onChange={(e) => setPosition(e.target.value)}>
+                            <option value="center">{t('watermarkCenter')}</option>
+                            <option value="top-right">{t('watermarkTopRight')}</option>
+                            <option value="top-left">{t('watermarkTopLeft')}</option>
+                            <option value="bottom-right">{t('watermarkBottomRight')}</option>
+                            <option value="bottom-left">{t('watermarkBottomLeft')}</option>
+                        </select>
+                    </div>
+                    <div className="input-settings">
+                        <label className="button-text">{t('watermarkSize')}</label>
+                        <select value={size} onChange={(e) => setSize(e.target.value)}>
+                            <option value="small">{t('watermarkSmall')}</option>
+                            <option value="normal">{t('watermarkNormal')}</option>
+                            <option value="big">{t('watermarkBig')}</option>
+                        </select>
+                    </div>
                 </div>
                 <div className="confirm-settings">
                     <button

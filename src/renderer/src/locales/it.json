@@ -36,5 +36,16 @@
     "watermarkSucces": "Filigrana applicata",
     "watermarkSettings": "Testo filigrana: ",
     "watermarkOpacity": "Opacità: ",
+    "watermarkRotation": "Rotazione: ",
+    "watermarkPosition": "Posizione: ",
+    "watermarkCenter": "centro",
+    "watermarkTopRight": "alto a destra",
+    "watermarkTopLeft": "alto a sinistra",
+    "watermarkBottomRight": "basso a destra",
+    "watermarkBottomLeft": "basso a sinistra",
+    "watermarkSize": "Dimensione: ",
+    "watermarkSmall": "piccolo",
+    "watermarkNormal": "normale",
+    "watermarkBig": "grande",
     "watermarkButton": "Applica"
 }

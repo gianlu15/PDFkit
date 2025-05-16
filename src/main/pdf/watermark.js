@@ -3,7 +3,26 @@ const fs = require('fs/promises');
 const os = require('os');
 const { PDFDocument, rgb, StandardFonts, degrees } = require('pdf-lib');
 
-export async function handleWatermark(event, file, text, opacity) {
+function getPositionCoords(position, width, height) {
+    switch (position) {
+        case "top-left": return { x: 50, y: height - 250 };
+        case "top-right": return { x: width - 200, y: height -2350 };
+        case "bottom-left": return { x: 50, y: 50 };
+        case "bottom-right": return { x: width - 200, y: 50 };
+        default: return { x: width / 2 - 50, y: height / 2 - 50 };
+    }
+}
+
+function getSize(size) {
+    switch (size) {
+        case "small": return 24;
+        case "normal": return 46;
+        case "big": return 68;
+        default: return 24;
+    }
+}
+
+export async function handleWatermark(event, file, text, opacity, position, rotation, sizeload) {
     try {
         const pdfBytes = await fs.readFile(file[0]);
         const pdf = await PDFDocument.load(pdfBytes);
@@ -14,15 +33,17 @@ export async function handleWatermark(event, file, text, opacity) {
         const pages = pdf.getPages();
         for (const page of pages) {
             const { width, height } = page.getSize();
+            const { x, y } = getPositionCoords(position, width, height);
+            const size = getSize(sizeload);
 
             page.drawText(watermarkText, {
-                x: width / 2 - 50,
-                y: height / 2,
-                size: 50,
+                x: x,
+                y: y,
+                size: size,
                 font,
-                rotate: degrees(45),
+                rotate: degrees(rotation),
                 color: rgb(0.75, 0.75, 0.75),
-                opacity: opacity/100,
+                opacity: opacity / 100,
             });
         }
 

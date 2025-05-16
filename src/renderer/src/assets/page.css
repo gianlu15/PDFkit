@@ -1,4 +1,5 @@
 @import './mergepage.css';
+@import './watermarkpage.css';
 
 
 .one-pdf-container {
@@ -11,8 +12,8 @@
 }
 
 .select-PDF {
-    height: 45vh;
-    width: 90%;
+    height: 30vh;
+    width: 60%;
     background-color: rgba(24, 24, 27, 0.5);
     display: flex;
     flex-direction: column;
@@ -86,7 +87,7 @@
     padding: 1rem;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 180px;
+    width: 25%;
 }
 
 .file-card img {
@@ -105,11 +106,13 @@
     text-overflow: ellipsis;
     max-width: 150px;
     margin: 0px;
+    font-size: 14px;
+    margin-bottom: 2px;
 }
 
 .operation-settings {
-    height: 25vh;
-    width: 75%;
+    height: 35vh;
+    width: 90%;
     background-color: rgba(24, 24, 27);
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05), 0px 8px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1);
     padding: 16px;
@@ -184,7 +187,7 @@
 }
 
 .input-pages:focus {
-    border: 2px solid #c3c3c3;
+    border: 1px solid #c3c3c3;
     outline: none;
 }
 
@@ -239,12 +242,4 @@
         'Droid Sans',
         'Helvetica Neue',
         sans-serif;
-}
-
-.slider {
-  width: 20%;
-  height: 25px;
-  opacity: 0.7;
-  outline: none;
-  transition: opacity .2s;
 }

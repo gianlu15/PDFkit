@@ -36,5 +36,16 @@
     "watermarkSucces": "Watermark applied",
     "watermarkSettings": "Watermark text: ",
     "watermarkOpacity": "Opacity: ",
+    "watermarkRotation": "Rotation: ",
+    "watermarkPosition": "Position: ",
+    "watermarkCenter": "center",
+    "watermarkTopRight": "top right",
+    "watermarkTopLeft": "top left",
+    "watermarkBottomRight": "bottom right",
+    "watermarkBottomLeft": "bottom left",
+    "watermarkSize": "Size:",
+    "watermarkSmall": "small",
+    "watermarkNormal": "normal",
+    "watermarkBig": "large",
     "watermarkButton": "Apply"
 }

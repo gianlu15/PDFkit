@@ -36,5 +36,16 @@
     "watermarkSucces": "Marca de agua aplicada",
     "watermarkSettings": "Texto de la marca de agua: ",
     "watermarkOpacity": "Opacidad: ",
+    "watermarkRotation": "Rotación: ",
+    "watermarkPosition": "Posición: ",
+    "watermarkCenter": "centro",
+    "watermarkTopRight": "arriba a la derecha",
+    "watermarkTopLeft": "arriba a la izquierda",
+    "watermarkBottomRight": "abajo a la derecha",
+    "watermarkBottomLeft": "abajo a la izquierda",
+    "watermarkSize": "Tamaño: ",
+    "watermarkSmall": "pequeño",
+    "watermarkNormal": "normal",
+    "watermarkBig": "grande",
     "watermarkButton": "Aplicar"
 }

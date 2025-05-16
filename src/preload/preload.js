@@ -12,7 +12,7 @@ const api = {
   splitPersonalizedPDF: (filePaths, interval) => ipcRenderer.invoke('split-personalized-pdfs', filePaths, interval),
   extractionPDF: (filePaths, intervals) => ipcRenderer.invoke('extraction-pdfs', filePaths, intervals),
   removePDF: (filePaths, intervals) => ipcRenderer.invoke('remove-pdfs', filePaths, intervals),
-  watermarkPDF: (filePaths, text, opacity) => ipcRenderer.invoke('watermark-pdf', filePaths, text, opacity)
+  watermarkPDF: (filePaths, text, opacity, position, rotation, size) => ipcRenderer.invoke('watermark-pdf', filePaths, text, opacity, position, rotation, size)
 }
 
 // 📦 Esponiamo sia electronAPI (di toolkit) sia api (tua)
