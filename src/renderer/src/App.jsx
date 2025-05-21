@@ -8,41 +8,59 @@ import LanguagePage from "./components/LanguagePage";
 import SplitPage from "./components/operation/SplitPage";
 import WatermarkPage from "./components/operation/WatermarkPage";
 import SummaryPage from "./components/operation/SummaryPage";
+import HelpPage from "./components/HelpPage";
+import CreditsPage from "./components/CreditsPage";
 import { AnimatePresence, motion } from "framer-motion";
 
 
 function App() {
 
     const [currentPage, setCurrentPage] = useState("home");
+    const [previousPage, setPreviousPage] = useState(null);
+    const pageOrder = ['home', 'help', 'language', 'credits'];
+    const direction = getPageDirection(previousPage, currentPage);
+    const pageVariant = animationVariants[direction] || animationVariants.default;
+
+
+    const handlePageChange = (nextPage) => {
+        setPreviousPage(currentPage);
+        setCurrentPage(nextPage);
+    };
+
+    const getPageDirection = (from, to) => {
+        const fromIndex = pageOrder.indexOf(from);
+        const toIndex = pageOrder.indexOf(to);
+
+        if (fromIndex === -1 || toIndex === -1) return 'default';
+
+        return fromIndex < toIndex ? 'down' : 'up';
+    };
 
     const animationVariants = {
-        home: {
-            initial: { y: "-20%", opacity: 0 },
-            animate: { y: "0%", opacity: 1 },
-            exit: { y: "-20%", opacity: 0 },
-            transition: { duration: 0.5, ease: "easeOut" }
+        down: {
+            initial: { y: '100%', opacity: 0 },
+            animate: { y: '0%', opacity: 1 },
+            exit: { y: '50%', opacity: 0 },
+            transition: { duration: 0.5, ease: 'easeOut' }
         },
-        language: {
-            initial: { y: "100%", opacity: 0 },
-            animate: { y: "0%", opacity: 1 },
-            exit: { y: "50%", opacity: 0 },
-            transition: { duration: 0.5, ease: "easeOut" }
+        up: {
+            initial: { y: '-100%', opacity: 0 },
+            animate: { y: '0%', opacity: 1 },
+            exit: { y: '-50%', opacity: 0 },
+            transition: { duration: 0.5, ease: 'easeOut' }
         },
         default: {
-            initial: { scale: 0.8, opacity: 0 },
+            initial: { scale: 0.9, opacity: 0 },
             animate: { scale: 1, opacity: 1 },
-            exit: { scale: 0.8, opacity: 0 },
-            transition: { duration: 0.2 }
-
+            exit: { scale: 0.9, opacity: 0 },
+            transition: { duration: 0.3, ease: 'easeOut' }
         }
     };
 
-    const pageVariant = animationVariants[currentPage] || animationVariants.default;
-
-
     return (
         <>
-            <Navbar onSelectOperation={setCurrentPage} />
+            <Navbar onSelectOperation={handlePageChange}
+            />
             <div className="main-container">
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -53,14 +71,17 @@ function App() {
                         transition={pageVariant.transition}
                         className="page-wrapper"
                     >
-                        {currentPage === "home" && <Homepage onSelectOperation={setCurrentPage} />}
+                        {currentPage === "home" && <Homepage onSelectOperation={handlePageChange}
+                        />}
                         {currentPage === "merge" && <MergePage />}
                         {currentPage === "remove" && <RemovePage />}
                         {currentPage === "extract" && <ExtractPage />}
                         {currentPage === "split" && <SplitPage />}
                         {currentPage === "watermark" && <WatermarkPage />}
                         {currentPage === "summary" && <SummaryPage />}
+                        {currentPage === "help" && <HelpPage />}
                         {currentPage === "language" && <LanguagePage />}
+                        {currentPage === "credits" && <CreditsPage />}
                     </motion.div>
                 </AnimatePresence>
 

@@ -17,7 +17,7 @@ function Navbar({onSelectOperation}) {
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#" onClick={() => onSelectOperation('help')}>
                     <img className="navIcon" src={helpIcone} />
                     <span className="nameIcon">{t('navbarHelp')}</span>
                 </a>
@@ -29,7 +29,7 @@ function Navbar({onSelectOperation}) {
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#" onClick={() => onSelectOperation('credits')}>
                     <img className="navIcon" src={creditIcone} />
                     <span className="nameIcon">{t('navbarCredits')}</span>
                 </a>
