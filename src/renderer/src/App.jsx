@@ -7,6 +7,7 @@ import ExtractPage from "./components/operation/ExtractPage";
 import LanguagePage from "./components/LanguagePage";
 import SplitPage from "./components/operation/SplitPage";
 import WatermarkPage from "./components/operation/WatermarkPage";
+import SummaryPage from "./components/operation/SummaryPage";
 import { AnimatePresence, motion } from "framer-motion";
 
 
@@ -58,6 +59,7 @@ function App() {
                         {currentPage === "extract" && <ExtractPage />}
                         {currentPage === "split" && <SplitPage />}
                         {currentPage === "watermark" && <WatermarkPage />}
+                        {currentPage === "summary" && <SummaryPage />}
                         {currentPage === "language" && <LanguagePage />}
                     </motion.div>
                 </AnimatePresence>

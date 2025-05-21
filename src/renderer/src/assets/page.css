@@ -67,7 +67,7 @@
 
 #select-extract-button,
 #confirm-extract-button {
-    background: linear-gradient(90deg, rgba(70, 137, 140, 1) 0%, rgba(115, 18, 115, 1) 100%);
+    background: linear-gradient(90deg, rgba(45, 30, 130, 1) 0%, rgba(115, 18, 115, 1) 100%);
 }
 
 #select-split-button,
@@ -78,6 +78,11 @@
 #select-watermark-button,
 #confirm-watermark-button {
     background: linear-gradient(90deg, rgba(71, 54, 166, 1) 0%, rgba(18, 102, 115, 1) 100%);
+}
+
+#select-summary-button,
+#confirm-summary-button {
+    background: linear-gradient(90deg, rgba(130, 100, 30, 1) 0%, rgba(172, 161, 13, 1) 100%);
 }
 
 .file-card {

@@ -10,6 +10,8 @@ import { handleSplitPersonalizedIntervals } from './pdf/splitPersonalized.js'
 import { handleExtraction } from './pdf/extraction.js'
 import { handleRemove } from './pdf/remove.js'
 import { handleWatermark } from './pdf/watermark.js'
+import { handleSummary } from './pdf/summary.js'
+
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -60,6 +62,8 @@ app.whenReady().then(() => {
   ipcMain.handle('extraction-pdfs', handleExtraction)
   ipcMain.handle('remove-pdfs', handleRemove)
   ipcMain.handle('watermark-pdf', handleWatermark)
+  ipcMain.handle('summary-pdf', handleSummary)
+
 
   ipcMain.handle('dialog:openFiles', async () => {
     const result = await dialog.showOpenDialog({

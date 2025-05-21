@@ -2,8 +2,6 @@ import { contextBridge, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 const fs = require('fs');
 
-
-// ✅ Custom APIs che vuoi esporre tu:
 const api = {
   selectPDFs: () => ipcRenderer.invoke('dialog:openFiles'),
   readFileAsArrayBuffer: (filePath) => fs.promises.readFile(filePath),
@@ -12,10 +10,11 @@ const api = {
   splitPersonalizedPDF: (filePaths, interval) => ipcRenderer.invoke('split-personalized-pdfs', filePaths, interval),
   extractionPDF: (filePaths, intervals) => ipcRenderer.invoke('extraction-pdfs', filePaths, intervals),
   removePDF: (filePaths, intervals) => ipcRenderer.invoke('remove-pdfs', filePaths, intervals),
-  watermarkPDF: (filePaths, text, opacity, position, rotation, size) => ipcRenderer.invoke('watermark-pdf', filePaths, text, opacity, position, rotation, size)
+  extractionImagesPDF: (filePaths) => ipcRenderer.invoke('extraction-images-pdf', filePaths),
+  watermarkPDF: (filePaths, text, opacity, position, rotation, size) => ipcRenderer.invoke('watermark-pdf', filePaths, text, opacity, position, rotation, size),
+  summaryPDF: (filePaths, language) => ipcRenderer.invoke('summary-pdf', filePaths, language)
 }
 
-// 📦 Esponiamo sia electronAPI (di toolkit) sia api (tua)
 if (process.contextIsolated) {
   try {
     contextBridge.exposeInMainWorld('electron', electronAPI)
@@ -24,7 +23,6 @@ if (process.contextIsolated) {
     console.error(error)
   }
 } else {
-  // In fallback senza context isolation
   window.electron = electronAPI
   window.api = api
 }

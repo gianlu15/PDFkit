@@ -1,4 +1,5 @@
 {
+    "activeLanguage": "it",
     "subtitleHome": "Seleziona l'operazione di modifica",
     "navbarHelp": "Aiuto",
     "navbarLanguage": "Lingua",
@@ -47,5 +48,10 @@
     "watermarkSmall": "piccolo",
     "watermarkNormal": "normale",
     "watermarkBig": "grande",
-    "watermarkButton": "Applica"
+    "watermarkButton": "Applica",
+    "summaryTitle": "Riassumi",
+    "summaryDesc": "Riassumi in poche righe i tuoi PDF",
+    "summaryNote": "Nota: numero limitato di utilizzi disponibili",
+    "summarySuccess": "Riassunto con successo",
+    "summaryButton": "Riassumi"
 }

@@ -5,6 +5,7 @@ import mergeIcon from "../../assets/icon/merge.svg";
 import removeIcon from "../../assets/icon/remove.svg";
 import extractIcon from "../../assets/icon/extract.svg";
 import watermarkIcon from "../../assets/icon/watermark.svg";
+import summaryIcon from "../../assets/icon/summary.svg";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 function OperationGrid({ onSelectOperation }) {
@@ -72,6 +73,14 @@ function OperationGrid({ onSelectOperation }) {
                 icon={watermarkIcon}
                 onClick={() => handleSelect('watermark', "linear-gradient(180deg, rgb(18, 102, 115) 0%, rgba(20, 27, 38, 1) 45%)")}
                 onMouseEnter={() => !locked && setBackground("linear-gradient(180deg, rgb(18, 102, 115) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onMouseLeave={() => !locked && setBackground(defaultBackground)}
+            />
+            <OperationCard
+                title={t('summaryTitle')}
+                desc={t('summaryDesc')}
+                icon={summaryIcon}
+                onClick={() => handleSelect('summary', "linear-gradient(180deg, rgb(172, 161, 13) 0%, rgba(20, 27, 38, 1) 45%)")}
+                onMouseEnter={() => !locked && setBackground("linear-gradient(180deg, rgb(172, 161, 13) 0%, rgba(20, 27, 38, 1) 45%)")}
                 onMouseLeave={() => !locked && setBackground(defaultBackground)}
             />
         </div>

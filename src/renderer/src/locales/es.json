@@ -1,4 +1,5 @@
 {
+    "activeLanguage": "es",
     "subtitleHome": "Selecciona la operación de edición",
     "navbarHelp": "Ayuda",
     "navbarLanguage": "Idioma",
@@ -47,5 +48,10 @@
     "watermarkSmall": "pequeño",
     "watermarkNormal": "normal",
     "watermarkBig": "grande",
-    "watermarkButton": "Aplicar"
+    "watermarkButton": "Aplicar",
+    "summaryTitle": "Resumir",
+    "summaryDesc": "Resume tus PDF en pocas líneas",
+    "summaryNote": "Nota: número limitado de usos disponibles",
+    "summarySuccess": "Resumen realizado con éxito",
+    "summaryButton": "Resumir"
 }
