@@ -10,7 +10,7 @@ function Homepage({ onSelectOperation }) {
     return (
         <div className="homeContainer">
             <div className="titleContainer">
-                <Title text="PDFtool" />
+                <Title text="PDFkit" />
                 <Subtitle text={t('subtitleHome')} />
             </div>
             <OperationGrid onSelectOperation={onSelectOperation} />

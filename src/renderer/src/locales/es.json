@@ -53,5 +53,20 @@
     "summaryDesc": "Resume tus PDF en pocas líneas",
     "summaryNote": "Nota: número limitado de usos disponibles",
     "summarySuccess": "Resumen realizado con éxito",
-    "summaryButton": "Resumir"
+    "summaryButton": "Resumir",
+    "helpSubtitle": "Descubre cómo funciona PDFkit",
+    "helpTitleWhatIsPDFkit": "¿Qué es PDFkit?",
+    "helpParagraphWhatIsPDFkit": "PDFkit es una aplicación de escritorio que permite realizar operaciones de edición en archivos PDF de forma sencilla, rápida y segura. A diferencia de los servicios web, PDFkit no requiere cargar los documentos en servidores externos: la mayoría de las operaciones se realizan localmente en tu dispositivo, lo que garantiza mayor velocidad, confidencialidad y control de los datos.",
+    "helpTitleMerge": "¿Cómo funciona la operación de Unir?",
+    "helpParagraphMerge": "La operación de Unir permite combinar hasta 10 archivos PDF en un solo documento. Basta con seleccionar los PDF que deseas unir, en el orden exacto en el que deben aparecer en el archivo final. Después de seleccionar los archivos, se debe asignar un nombre personalizado al documento combinado, que se guardará como un único archivo al iniciar la operación.",
+    "helpTitleSplit": "¿Cómo funciona la operación Dividir?",
+    "helpParagraphSplit": "La función Dividir permite separar un archivo PDF en varias partes, según las preferencias del usuario. Hay dos tipos de división disponibles: Con Intervalos Personalizados se puede indicar exactamente qué páginas extraer en grupos separados utilizando una sintaxis flexible (ej. 1-3,5,8-10). Así se pueden crear documentos que contengan solo las secciones de interés. El Intervalo Fijo divide el PDF en bloques de N páginas. Por ejemplo, si se establece en 5, el documento se dividirá en secciones de 5 páginas cada una (ej. páginas 1–5, 6–10, 11–15, etc.). Una vez iniciada, la aplicación genera automáticamente los nuevos bloques.",
+    "helpTitleRemove": "¿Cómo funciona la operación Eliminar?",
+    "helpParagraphRemove": "La operación Eliminar permite suprimir páginas específicas de un archivo PDF de forma rápida y directa. Esta función es útil para eliminar contenido innecesario, secciones vacías o información que se desea excluir antes de compartir o archivar el documento. Se puede seleccionar un único archivo PDF y especificar las páginas a eliminar utilizando intervalos personalizados con sintaxis flexible (ej. 1-3,5,8-10). Una vez iniciada, la aplicación genera automáticamente una nueva versión del documento sin las páginas indicadas.",
+    "helpTitleExtract": "¿Cómo funciona la operación Extraer?",
+    "helpParagraphExtract": "La operación Extraer permite exportar páginas específicas de un archivo PDF y guardarlas en un nuevo documento. Es especialmente útil para aislar secciones relevantes de un PDF sin modificar el archivo original. Se puede seleccionar solo un PDF a la vez y especificar las páginas a extraer utilizando intervalos personalizados con una sintaxis flexible (ej. 1-3,5,8-10). Una vez iniciada la operación, la aplicación genera automáticamente los nuevos documentos.",
+    "helpTitleWatermark": "¿Cómo funciona la operación Marca de agua?",
+    "helpParagraphWatermark": "La operación Marca de agua permite añadir un texto superpuesto en todas las páginas de un PDF, útil para indicar que un documento es confidencial, un borrador, facsímil u otra necesidad de marca visual. Es posible personalizar varios parámetros de la marca de agua: Texto (ej. “FACSIMIL”), Opacidad (para ajustar la transparencia), Rotación (en grados, ej. 45°), Posición (centro, esquinas, parte superior o inferior) y Tamaño (pequeño, medio, grande). Una vez iniciada, la aplicación genera automáticamente la nueva versión del documento.",
+    "helpTitleSummarize": "¿Cómo funciona la operación Resumir?",
+    "helpParagraphSummarize": "La operación Resumir permite generar automáticamente un resumen del contenido de un documento PDF, reduciendo el texto a pocas líneas que destacan la información principal. Es la única operación que requiere cargar el documento en un servidor externo, ya que utiliza un servicio de inteligencia artificial para procesar el texto. Por esta razón, puede haber un pequeño tiempo de espera y un número limitado de usos. Al final del proceso, se genera un nuevo PDF con el resumen."
 }

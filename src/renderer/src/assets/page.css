@@ -1,6 +1,6 @@
 @import './mergepage.css';
 @import './watermarkpage.css';
-
+@import './help.css';
 
 .one-pdf-container {
     display: flex;

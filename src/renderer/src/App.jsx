@@ -18,8 +18,6 @@ function App() {
     const [currentPage, setCurrentPage] = useState("home");
     const [previousPage, setPreviousPage] = useState(null);
     const pageOrder = ['home', 'help', 'language', 'credits'];
-    const direction = getPageDirection(previousPage, currentPage);
-    const pageVariant = animationVariants[direction] || animationVariants.default;
 
 
     const handlePageChange = (nextPage) => {
@@ -56,6 +54,9 @@ function App() {
             transition: { duration: 0.3, ease: 'easeOut' }
         }
     };
+
+    const direction = getPageDirection(previousPage, currentPage);
+    const pageVariant = animationVariants[direction] || animationVariants.default;
 
     return (
         <>
