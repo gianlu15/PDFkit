@@ -2,12 +2,13 @@ import { useState } from 'react';
 import Subtitle from '../subcomponents/Subtitle';
 import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
 import Worker from 'pdfjs-dist/legacy/build/pdf.worker?worker';
+import backIcon from "../../assets/icon/back.svg";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 
 pdfjsLib.GlobalWorkerOptions.workerPort = new Worker();
 
-function MergePage() {
+function MergePage({ onBack }) {
     const { t } = useLanguage();
 
     const [selectedFiles, setSelectedFiles] = useState([]);
@@ -65,6 +66,9 @@ function MergePage() {
     return (
         <div className="one-pdf-container">
             <div className="title-container">
+                <span className="back-icon" onClick={onBack}>
+                    <img src={backIcon} alt="Back" />
+                </span>                
                 <Subtitle text={t('mergeDesc')} />
             </div>
             <div className={`select-multiple-PDF ${selectedFiles.length > 0 ? 'active' : ''}`}>

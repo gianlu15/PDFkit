@@ -1,4 +1,4 @@
-import { contextBridge, ipcRenderer } from 'electron'
+import { contextBridge, ipcRenderer, shell } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 const fs = require('fs');
 
@@ -12,7 +12,8 @@ const api = {
   removePDF: (filePaths, intervals) => ipcRenderer.invoke('remove-pdfs', filePaths, intervals),
   extractionImagesPDF: (filePaths) => ipcRenderer.invoke('extraction-images-pdf', filePaths),
   watermarkPDF: (filePaths, text, opacity, position, rotation, size) => ipcRenderer.invoke('watermark-pdf', filePaths, text, opacity, position, rotation, size),
-  summaryPDF: (filePaths, language) => ipcRenderer.invoke('summary-pdf', filePaths, language)
+  summaryPDF: (filePaths, language) => ipcRenderer.invoke('summary-pdf', filePaths, language),
+  openExternal: (url) => shell.openExternal(url),
 }
 
 if (process.contextIsolated) {

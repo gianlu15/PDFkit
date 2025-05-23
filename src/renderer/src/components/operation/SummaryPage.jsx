@@ -2,12 +2,13 @@ import { useState } from 'react';
 import Subtitle from '../subcomponents/Subtitle';
 import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
 import Worker from 'pdfjs-dist/legacy/build/pdf.worker?worker';
+import backIcon from "../../assets/icon/back.svg";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 
 pdfjsLib.GlobalWorkerOptions.workerPort = new Worker();
 
-function SummaryPage() {
+function SummaryPage({ onBack }) {
     const { t } = useLanguage();
 
     const [selectedFile, setSelectedFile] = useState(null);
@@ -54,6 +55,9 @@ function SummaryPage() {
     return (
         <div className="one-pdf-container">
             <div className="title-container">
+                <span className="back-icon" onClick={onBack}>
+                    <img src={backIcon} alt="Back" />
+                </span>
                 <Subtitle text={t('summaryDesc')} />
             </div>
             <div className="select-PDF">

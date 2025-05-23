@@ -33,7 +33,7 @@
     "mergeSucces": "PDF uniti",
     "mergeMaxError": "Selezionare massimo 10 PDF",
     "mergeSettings": "Nome PDF unito: ",
-    "mergeButton": "Unisci",
+    "mergeButton": "Unisci documenti",
     "watermarkSucces": "Filigrana applicata",
     "watermarkSettings": "Testo filigrana: ",
     "watermarkOpacity": "Opacità: ",
@@ -68,5 +68,7 @@
     "helpTitleWatermark": "Come funziona l’operazione Filigrana?",
     "helpParagraphWatermark": "L’operazione Filigrana consente di aggiungere un testo sovrapposto a tutte le pagine di un PDF, utile ad esempio per indicare che un documento è riservato, fac-simile, bozza, o per altre necessità di marcatura visiva. È possibile personalizzare diversi parametri della filigrana: Testo: il contenuto da visualizzare (es. “FACSIMILE”), Opacità: per regolare la trasparenza del testo, rendendolo più o meno visibile, Rotazione: per inclinare il testo in gradi (es. 45°), Posizione: il punto in cui il testo viene inserito (centro, angoli, alto o basso della pagina), Dimensione: la grandezza del testo (piccola, media, grande). Una volta avviata l’operazione, l’applicazione genera automaticamente la nuova versione del documento.",
     "helpTitleSummarize": "Come funziona l’operazione Riassumi?",
-    "helpParagraphSummarize": "L’operazione Riassumi consente di generare automaticamente un riassunto del contenuto di un documento PDF, riducendo il testo a poche righe che ne evidenziano le informazioni principali. Si tratta dell’unica operazione dell’applicazione che richiede un caricamento su un server esterno, in quanto sfrutta un servizio di intelligenza artificiale per l’elaborazione del testo. Per questo motivo, può comportare un leggero tempo di attesa e prevede un numero limitato di utilizzi. Al termine del processo, viene generato un nuovo PDF contenente il riassunto."
+    "helpParagraphSummarize": "L’operazione Riassumi consente di generare automaticamente un riassunto del contenuto di un documento PDF, riducendo il testo a poche righe che ne evidenziano le informazioni principali. Si tratta dell’unica operazione dell’applicazione che richiede un caricamento su un server esterno, in quanto sfrutta un servizio di intelligenza artificiale per l’elaborazione del testo. Per questo motivo, può comportare un leggero tempo di attesa e prevede un numero limitato di utilizzi. Al termine del processo, viene generato un nuovo PDF contenente il riassunto.",
+    "creditsText1": "Questa applicazione è stata sviluppata da:",
+    "creditsText2": "Per richieste, contattami via email a"
 }

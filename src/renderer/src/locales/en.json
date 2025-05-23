@@ -68,5 +68,7 @@
     "helpTitleWatermark": "How does the Watermark operation work?",
     "helpParagraphWatermark": "The Watermark operation allows you to add text overlaid on all pages of a PDF, useful for indicating that a document is confidential, a draft, a facsimile, or for other visual marking needs. You can customize several parameters of the watermark: Text (e.g., “FACSIMILE”), Opacity (to adjust transparency), Rotation (in degrees, e.g., 45°), Position (center, corners, top or bottom), and Size (small, medium, large). Once started, the application automatically generates the new version of the document.",
     "helpTitleSummarize": "How does the Summarize operation work?",
-    "helpParagraphSummarize": "The Summarize operation automatically generates a summary of the contents of a PDF document, reducing the text to a few lines highlighting the main information. It is the only operation in the application that requires uploading to an external server, as it uses an AI service to process the text. For this reason, it may involve a short waiting time and has a limited number of uses. At the end of the process, a new PDF containing the summary is generated."
+    "helpParagraphSummarize": "The Summarize operation automatically generates a summary of the contents of a PDF document, reducing the text to a few lines highlighting the main information. It is the only operation in the application that requires uploading to an external server, as it uses an AI service to process the text. For this reason, it may involve a short waiting time and has a limited number of uses. At the end of the process, a new PDF containing the summary is generated.",
+    "creditsText1": "This application was developed by:",
+    "creditsText2": "For inquiries, please email me at"
 }

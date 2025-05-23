@@ -74,12 +74,12 @@ function App() {
                     >
                         {currentPage === "home" && <Homepage onSelectOperation={handlePageChange}
                         />}
-                        {currentPage === "merge" && <MergePage />}
-                        {currentPage === "remove" && <RemovePage />}
-                        {currentPage === "extract" && <ExtractPage />}
-                        {currentPage === "split" && <SplitPage />}
-                        {currentPage === "watermark" && <WatermarkPage />}
-                        {currentPage === "summary" && <SummaryPage />}
+                        {currentPage === "merge" && <MergePage onBack={() => handlePageChange("home")} />}
+                        {currentPage === "remove" && <RemovePage onBack={() => handlePageChange("home")} />}
+                        {currentPage === "extract" && <ExtractPage onBack={() => handlePageChange("home")} />}
+                        {currentPage === "split" && <SplitPage onBack={() => handlePageChange("home")}/>}
+                        {currentPage === "watermark" && <WatermarkPage onBack={() => handlePageChange("home")}/>}
+                        {currentPage === "summary" && <SummaryPage onBack={() => handlePageChange("home")}/>}
                         {currentPage === "help" && <HelpPage />}
                         {currentPage === "language" && <LanguagePage />}
                         {currentPage === "credits" && <CreditsPage />}

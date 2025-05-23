@@ -1,3 +1,16 @@
+body {
+    --background-card-color: #18181B;
+
+    --card-border-color: rgba(255, 255, 255, 0.1);
+    --card-box-shadow-1: rgba(0, 0, 0, 0.05);
+    --card-box-shadow-1-y: 3px;
+    --card-box-shadow-1-blur: 6px;
+    --card-box-shadow-2: rgba(0, 0, 0, 0.1);
+    --card-box-shadow-2-y: 8px;
+    --card-box-shadow-2-blur: 15px;
+}
+
+
 .language-container {
     display: flex;
     flex-direction: column;
@@ -18,12 +31,11 @@
 
 
 .language-card{
-    background-color: #1c1d4e;
-    background: linear-gradient(270deg,rgba(60, 116, 194, 1) 0%, rgba(18, 57, 115, 1) 100%);
+    background-color: var(--background-card-color);
     border-radius: 15px;
     cursor: pointer;
     position: relative;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05), 0px 8px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0px var(--card-box-shadow-1-y) var(--card-box-shadow-1-blur) var(--card-box-shadow-1), 0px var(--card-box-shadow-2-y) var(--card-box-shadow-2-blur) var(--card-box-shadow-2), 0 0 0 1px var(--card-border-color);
     transition: box-shadow .25s;
     display: flex;
     flex-direction: row;
