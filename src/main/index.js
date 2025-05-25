@@ -19,7 +19,6 @@ function createWindow() {
     height: 700,
     show: false,
     resizable: false,
-    title: "PDFkit",
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
@@ -44,7 +43,8 @@ function createWindow() {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
 
-  mainWindow.setTitle("PDFkit");
+  if (!is.dev) mainWindow.webContents.on('devtools-opened', () => mainWindow.webContents.closeDevTools());
+
 
 }
 
@@ -83,8 +83,6 @@ app.whenReady().then(() => {
 
   createWindow()
   
-  if (!is.dev) mainWindow.webContents.on('devtools-opened', () => mainWindow.webContents.closeDevTools());
-
 
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
