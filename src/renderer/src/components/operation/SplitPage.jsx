@@ -66,9 +66,14 @@ function SplitPage({ onBack }) {
         try {
             let success = false;
 
+            const exportPath = localStorage.getItem('exportPath');
+            if (!exportPath) {
+                setResultMessage('Devi prima scegliere una cartella di esportazione dalle impostazioni.');
+                return;
+            }
             if (splitType === 'custom') {
                 const intervals = getIntervals(splitInput.trim());
-                success = await window.api.splitPersonalizedPDF([selectedFile], intervals);
+                success = await window.api.splitPersonalizedPDF([selectedFile], intervals, exportPath);
             } else if (splitType === 'fixed') {
                 const trimmed = splitInput.trim();
                 if (!/^\d+$/.test(trimmed)) {
@@ -96,7 +101,7 @@ function SplitPage({ onBack }) {
             <div className="title-container">
                 <span className="back-icon" onClick={onBack}>
                     <img src={backIcon} alt="Back" />
-                </span>  
+                </span>
                 <Subtitle text={t('splitDesc')} />
             </div>
             <div className="split-select-PDF">

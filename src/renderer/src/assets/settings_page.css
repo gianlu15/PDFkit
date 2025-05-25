@@ -1,0 +1,60 @@
+body {
+    --background-card-color: #18181B;
+
+    --card-border-color: rgba(255, 255, 255, 0.1);
+    --card-box-shadow-1: rgba(0, 0, 0, 0.05);
+    --card-box-shadow-1-y: 3px;
+    --card-box-shadow-1-blur: 6px;
+    --card-box-shadow-2: rgba(0, 0, 0, 0.1);
+    --card-box-shadow-2-y: 8px;
+    --card-box-shadow-2-blur: 15px;
+}
+
+.settings-section {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    height: 62vh;
+    border-radius: 15px;
+    background-color: var(--background-card-color);
+    box-shadow: 0px var(--card-box-shadow-1-y) var(--card-box-shadow-1-blur) var(--card-box-shadow-1), 0px var(--card-box-shadow-2-y) var(--card-box-shadow-2-blur) var(--card-box-shadow-2), 0 0 0 1px var(--card-border-color);
+    padding: 10px;
+}
+
+.settings-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    align-items: center;
+}
+
+.settings-button {
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75em 1em;
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 2em;
+    font-size: 1rem;
+    border: 0px;
+    box-shadow: 0 0.7em 1.5em -0.5em hsla(0, 0%, 0%, 0.745);
+    background: linear-gradient(266deg, rgba(59, 112, 173, 1) 0%, rgba(129, 168, 235, 1) 100%);
+}
+
+.settings-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.2em 1.5em -0.5em hsla(0, 0%, 0%, 0.745);
+    opacity: 0.8;
+}
+
+.select-folder-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

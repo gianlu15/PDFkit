@@ -70,5 +70,10 @@
     "helpTitleSummarize": "How does the Summarize operation work?",
     "helpParagraphSummarize": "The Summarize operation automatically generates a summary of the contents of a PDF document, reducing the text to a few lines highlighting the main information. It is the only operation in the application that requires uploading to an external server, as it uses an AI service to process the text. For this reason, it may involve a short waiting time and has a limited number of uses. At the end of the process, a new PDF containing the summary is generated.",
     "creditsText1": "This application was developed by:",
-    "creditsText2": "For inquiries, please email me at"
+    "creditsText2": "For inquiries, please email me at",
+    "settingsTitle": "Edit app settings",
+    "settingsSelectFolder": "Select the folder where new documents will be saved:",
+    "settingsButtonSelect": "Choose folder",
+    "settingsCurrentFolder": "Current folder:",
+    "settingsButtonChange": "Change folder"
 }

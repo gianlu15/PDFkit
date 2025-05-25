@@ -1,10 +1,11 @@
 {
-  "name": "pdftool",
+  "name": "pdfkit",
   "version": "1.0.0",
-  "description": "An Electron application with React",
+  "description": "PDFtool è un'app desktop per la gestione dei PDF: unione, divisione, filigrana, riassunto AI e altro.",
   "main": "./out/main/index.js",
-  "author": "example.com",
-  "homepage": "https://electron-vite.org",
+  "author": "Gianluca Tondo <tondo.gianlu@gmail.com>",
+  "homepage": "https://github.com/gianlu15/PDFtool",
+  "license": "MIT",
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint --cache .",
@@ -15,7 +16,34 @@
     "build:unpack": "npm run build && electron-builder --dir",
     "build:win": "npm run build && electron-builder --win",
     "build:mac": "npm run build && electron-builder --mac",
-    "build:linux": "npm run build && electron-builder --linux"
+    "build:linux": "npm run build && electron-builder --linux",
+    "preview:build": "npm run build && electron ./out/main/index.js"
+  },
+  "build": {
+    "appId": "com.pdfkit.desktop",
+    "productName": "PDFkit",
+    "files": [
+      "dist",
+      "out",
+      "resources",
+      "node_modules",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "mac": {
+      "target": ["dmg"],
+      "icon": "resources/logo.icns"
+    },
+    "win": {
+      "target": ["nsis"],
+      "icon": "resources/logo.ico"
+    },
+    "linux": {
+      "target": ["AppImage"],
+      "icon": "resources/logo.png"
+    }
   },
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.1",
@@ -23,7 +51,6 @@
     "axios": "^1.9.0",
     "dotenv": "^16.5.0",
     "framer-motion": "^12.11.3",
-    "pdf-image-extractor": "^2.0.8",
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "^5.2.133"
   },

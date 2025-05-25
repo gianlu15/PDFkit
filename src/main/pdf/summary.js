@@ -9,7 +9,7 @@ require('dotenv').config();
 const API_KEY = process.env.SUMMARY_API_KEY;
 const API_URL = process.env.SUMMARY_WEBSITE;
 
-export async function handleSummary(event, file, language) {
+export async function handleSummary(event, file, language, exportPath) {
   try {
     const form = new FormData();
     form.append('file', fs.createReadStream(file[0]));
@@ -49,7 +49,8 @@ export async function handleSummary(event, file, language) {
 
     const pdfBytes = await pdfDoc.save();
     const baseName = path.basename(file[0], '.pdf');
-    const outputPath = path.join(os.homedir(), 'Desktop', `${baseName}_summary.pdf`);
+    const outputDir = exportPath || path.join(os.homedir(), 'Desktop');
+    const outputPath = path.join(outputDir, `${baseName}_summary.pdf`);
     fs.writeFileSync(outputPath, pdfBytes);
 
     return true;

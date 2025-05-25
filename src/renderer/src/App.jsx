@@ -9,6 +9,7 @@ import SplitPage from "./components/operation/SplitPage";
 import WatermarkPage from "./components/operation/WatermarkPage";
 import SummaryPage from "./components/operation/SummaryPage";
 import HelpPage from "./components/HelpPage";
+import SettingsPage from "./components/SettingsPage";
 import CreditsPage from "./components/CreditsPage";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -17,7 +18,7 @@ function App() {
 
     const [currentPage, setCurrentPage] = useState("home");
     const [previousPage, setPreviousPage] = useState(null);
-    const pageOrder = ['home', 'help', 'language', 'credits'];
+    const pageOrder = ['home', 'help', 'language', 'settings', 'credits'];
 
 
     const handlePageChange = (nextPage) => {
@@ -77,11 +78,12 @@ function App() {
                         {currentPage === "merge" && <MergePage onBack={() => handlePageChange("home")} />}
                         {currentPage === "remove" && <RemovePage onBack={() => handlePageChange("home")} />}
                         {currentPage === "extract" && <ExtractPage onBack={() => handlePageChange("home")} />}
-                        {currentPage === "split" && <SplitPage onBack={() => handlePageChange("home")}/>}
-                        {currentPage === "watermark" && <WatermarkPage onBack={() => handlePageChange("home")}/>}
-                        {currentPage === "summary" && <SummaryPage onBack={() => handlePageChange("home")}/>}
+                        {currentPage === "split" && <SplitPage onBack={() => handlePageChange("home")} />}
+                        {currentPage === "watermark" && <WatermarkPage onBack={() => handlePageChange("home")} />}
+                        {currentPage === "summary" && <SummaryPage onBack={() => handlePageChange("home")} />}
                         {currentPage === "help" && <HelpPage />}
                         {currentPage === "language" && <LanguagePage />}
+                        {currentPage === "settings" && <SettingsPage />}
                         {currentPage === "credits" && <CreditsPage />}
                     </motion.div>
                 </AnimatePresence>

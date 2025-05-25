@@ -3,7 +3,7 @@ const fs = require('fs/promises');
 const os = require('os');
 const { PDFDocument } = require('pdf-lib');
 
-export async function handleRemove(event, file, intervals) {
+export async function handleRemove(event, file, intervals, exportPath) {
     try {
         const pdfBytes = await fs.readFile(file[0]);
         const pdf = await PDFDocument.load(pdfBytes);
@@ -31,8 +31,8 @@ export async function handleRemove(event, file, intervals) {
         copiedPages.forEach(page => newPdf.addPage(page));
 
         const base = path.basename(file[0], '.pdf');
-        const dir = path.join(os.homedir(), 'Desktop');
-        const outputPath = path.join(dir, `${base}_removed.pdf`);
+        const outputDir = exportPath || path.join(os.homedir(), 'Desktop');
+        const outputPath = path.join(outputDir, `${base}_removed.pdf`);
 
         const outputBytes = await newPdf.save();
         await fs.writeFile(outputPath, outputBytes);

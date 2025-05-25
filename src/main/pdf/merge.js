@@ -3,10 +3,11 @@ const fs = require('fs/promises');
 const os = require('os');
 const { PDFDocument } = require('pdf-lib');
 
-export async function handleMerge(event, files, fileName) {
+export async function handleMerge(event, files, fileName, exportPath) {
   try {
     const safeName = fileName.replace(/[^a-zA-Z0-9-_]/g, '_');
-    const outputPath = path.join(os.homedir(), 'Desktop', `${safeName}.pdf`);
+    const outputDir = exportPath || path.join(os.homedir(), 'Desktop');
+    const outputPath = path.join(outputDir, `${safeName}.pdf`);
     const mergedPdf = await PDFDocument.create();
 
     for (const filePath of files) {

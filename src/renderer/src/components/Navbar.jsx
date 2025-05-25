@@ -2,11 +2,12 @@ import homeIcone from "../assets/icon/pdfHome.svg";
 import helpIcone from "../assets/icon/help.svg";
 import languageIcone from "../assets/icon/language.svg";
 import creditIcone from "../assets/icon/credits.svg";
+import settingsIcon from "../assets/icon/settings.svg";
 import { useLanguage } from "../contexts/LanguageContext";
 
 
 
-function Navbar({onSelectOperation}) {
+function Navbar({ onSelectOperation }) {
     const { t } = useLanguage();
     return (
         <ul className="navbar">
@@ -26,6 +27,12 @@ function Navbar({onSelectOperation}) {
                 <a href="#" onClick={() => onSelectOperation('language')}>
                     <img className="navIcon" src={languageIcone} />
                     <span className="nameIcon">{t('navbarLanguage')}</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onClick={() => onSelectOperation('settings')}>
+                    <img className="navIcon" src={settingsIcon} />
+                    <span className="nameIcon">{t('navbarSettings')}</span>
                 </a>
             </li>
             <li>

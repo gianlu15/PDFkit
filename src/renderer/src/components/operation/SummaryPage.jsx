@@ -43,8 +43,13 @@ function SummaryPage({ onBack }) {
     };
 
     const handleSummary = async () => {
+        const exportPath = localStorage.getItem('exportPath');
+        if (!exportPath) {
+            setResultMessage('Devi prima scegliere una cartella di esportazione dalle impostazioni.');
+            return;
+        }
         try {
-            const success = await window.api.summaryPDF([selectedFile], t('activeLanguage'));
+            const success = await window.api.summaryPDF([selectedFile], t('activeLanguage'), exportPath);
             setResultMessage(success ? t('summarySuccess') : t('operationError'));
         } catch (err) {
             console.error(err);

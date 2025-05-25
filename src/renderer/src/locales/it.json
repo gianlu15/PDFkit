@@ -70,5 +70,10 @@
     "helpTitleSummarize": "Come funziona l’operazione Riassumi?",
     "helpParagraphSummarize": "L’operazione Riassumi consente di generare automaticamente un riassunto del contenuto di un documento PDF, riducendo il testo a poche righe che ne evidenziano le informazioni principali. Si tratta dell’unica operazione dell’applicazione che richiede un caricamento su un server esterno, in quanto sfrutta un servizio di intelligenza artificiale per l’elaborazione del testo. Per questo motivo, può comportare un leggero tempo di attesa e prevede un numero limitato di utilizzi. Al termine del processo, viene generato un nuovo PDF contenente il riassunto.",
     "creditsText1": "Questa applicazione è stata sviluppata da:",
-    "creditsText2": "Per richieste, contattami via email a"
+    "creditsText2": "Per richieste, contattami via email a",
+    "settingsTitle": "Modifica le impostazioni dell'app",
+    "settingsSelectFolder": "Scegli la cartella dove inserire i nuovi documenti:",
+    "settingsButtonSelect": "Scegli percorso",
+    "settingsCurrentFolder": "Cartella attuale:",
+    "settingsButtonChange": "Cambia cartella"
 }

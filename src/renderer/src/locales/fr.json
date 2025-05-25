@@ -70,5 +70,10 @@
     "helpTitleSummarize": "Comment fonctionne l’opération Résumer ?",
     "helpParagraphSummarize": "L’opération Résumer permet de générer automatiquement un résumé du contenu d’un document PDF, en réduisant le texte à quelques lignes mettant en évidence les informations principales. Il s'agit de la seule opération qui nécessite le téléversement du document sur un serveur externe, car elle utilise un service d’intelligence artificielle pour traiter le texte. Cela peut entraîner un léger délai d’attente et un nombre limité d’utilisations. À la fin du processus, un nouveau PDF contenant le résumé est généré.",
     "creditsText1": "Cette application a été développée par :",
-    "creditsText2": "Pour toute demande, veuillez m’écrire à"
+    "creditsText2": "Pour toute demande, veuillez m’écrire à",
+    "settingsTitle": "Modifier les paramètres de l'application",
+    "settingsSelectFolder": "Choisissez le dossier où enregistrer les nouveaux documents :",
+    "settingsButtonSelect": "Choisir un dossier",
+    "settingsCurrentFolder": "Dossier actuel :",
+    "settingsButtonChange": "Changer de dossier"
 }

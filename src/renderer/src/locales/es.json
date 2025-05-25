@@ -70,5 +70,10 @@
     "helpTitleSummarize": "¿Cómo funciona la operación Resumir?",
     "helpParagraphSummarize": "La operación Resumir permite generar automáticamente un resumen del contenido de un documento PDF, reduciendo el texto a pocas líneas que destacan la información principal. Es la única operación que requiere cargar el documento en un servidor externo, ya que utiliza un servicio de inteligencia artificial para procesar el texto. Por esta razón, puede haber un pequeño tiempo de espera y un número limitado de usos. Al final del proceso, se genera un nuevo PDF con el resumen.",
     "creditsText1": "Esta aplicación fue desarrollada por:",
-    "creditsText2": "Para consultas, contáctame por correo en"
+    "creditsText2": "Para consultas, contáctame por correo en",
+    "settingsTitle": "Modificar la configuración de la aplicación",
+    "settingsSelectFolder": "Selecciona la carpeta donde guardar los nuevos documentos:",
+    "settingsButtonSelect": "Elegir carpeta",
+    "settingsCurrentFolder": "Carpeta actual:",
+    "settingsButtonChange": "Cambiar carpeta"
 }

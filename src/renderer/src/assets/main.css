@@ -3,6 +3,7 @@
 @import './navbar.css';
 @import './page.css';
 @import './language.css';
+@import './settings_page.css';
 
 body {
     overflow: hidden;

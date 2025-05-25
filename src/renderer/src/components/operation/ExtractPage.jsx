@@ -60,9 +60,14 @@ function ExtractPage({ onBack }) {
     };
 
     const handleExtract = async () => {
+        const exportPath = localStorage.getItem('exportPath');
+        if (!exportPath) {
+            setResultMessage('Devi prima scegliere una cartella di esportazione dalle impostazioni.');
+            return;
+        }
         try {
             const intervals = getIntervals(extractInput.trim());
-            const success = await window.api.extractionPDF([selectedFile], intervals);
+            const success = await window.api.extractionPDF([selectedFile], intervals, exportPath);
             setResultMessage(success ? t('extractSuccess') : t('operationError'));
         } catch (err) {
             console.error(err);
@@ -75,13 +80,13 @@ function ExtractPage({ onBack }) {
             <div className="title-container">
                 <span className="back-icon" onClick={onBack}>
                     <img src={backIcon} alt="Back" />
-                </span>  
+                </span>
                 <Subtitle text={t('extractDesc')} />
             </div>
             <div className="select-PDF">
                 {selectedFile ? (
                     <div className="file-card">
-                        {thumbnail && <img src={thumbnail} alt="PDF Preview"/>}
+                        {thumbnail && <img src={thumbnail} alt="PDF Preview" />}
                         <p className="pdf-name">{selectedFile.split('/').pop()}</p>
                     </div>
                 ) : (

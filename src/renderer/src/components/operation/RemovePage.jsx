@@ -60,9 +60,14 @@ function RemovePage({ onBack }) {
     };
 
     const handleRemove = async () => {
+        const exportPath = localStorage.getItem('exportPath');
+        if (!exportPath) {
+            setResultMessage('Devi prima scegliere una cartella di esportazione dalle impostazioni.');
+            return;
+        }
         try {
             const intervals = getIntervals(removeInput.trim());
-            const success = await window.api.removePDF([selectedFile], intervals);
+            const success = await window.api.removePDF([selectedFile], intervals, exportPath);
             setResultMessage(success ? t('removeSuccess') : t('operationError'));
         } catch (err) {
             console.error(err);
@@ -75,13 +80,13 @@ function RemovePage({ onBack }) {
             <div className="title-container">
                 <span className="back-icon" onClick={onBack}>
                     <img src={backIcon} alt="Back" />
-                </span>  
+                </span>
                 <Subtitle text={t('removeDesc')} />
             </div>
             <div className="select-PDF">
                 {selectedFile ? (
                     <div className="file-card">
-                        {thumbnail && <img src={thumbnail} alt="PDF Preview"/>}
+                        {thumbnail && <img src={thumbnail} alt="PDF Preview" />}
                         <p className="pdf-name">{selectedFile.split('/').pop()}</p>
                     </div>
                 ) : (

@@ -1,7 +1,7 @@
 import { app, shell, BrowserWindow, ipcMain, dialog } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
-import icon from '../../resources/icon.png?asset'
+import icon from '../../resources/logo.png?asset'
 
 // Import dei moduli PDF
 import { handleMerge } from './pdf/merge.js'
@@ -44,18 +44,13 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
-  // Set app user model id
   electronApp.setAppUserModelId('com.electron')
 
-  // Watch shortcuts
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window)
   })
 
-  // IPC test di base
-  ipcMain.on('ping', () => console.log('pong'))
 
-  // ✅ Qui aggiungiamo le tue API reali:
   ipcMain.handle('merge-pdfs', handleMerge)
   ipcMain.handle('split-fixed-pdfs', handleSplitFixedInterval)
   ipcMain.handle('split-personalized-pdfs', handleSplitPersonalizedIntervals)
@@ -73,7 +68,20 @@ app.whenReady().then(() => {
     return result.canceled ? [] : result.filePaths
   })
 
+
+  ipcMain.handle('dialog:selectFolder', async () => {
+    const result = await dialog.showOpenDialog({
+      properties: ['openDirectory']
+    });
+    return result.canceled ? null : result.filePaths[0];
+  });
+  
+
+
   createWindow()
+  
+  if (!is.dev) mainWindow.webContents.on('devtools-opened', () => mainWindow.webContents.closeDevTools());
+
 
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()

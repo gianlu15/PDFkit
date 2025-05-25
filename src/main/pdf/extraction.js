@@ -3,7 +3,7 @@ const fs = require('fs/promises');
 const os = require('os');
 const { PDFDocument } = require('pdf-lib');
 
-export async function handleExtraction(event, file, intervals) {
+export async function handleExtraction(event, file, intervals, exportPath) {
   try {
     const pdfBytes = await fs.readFile(file[0]);
     const pdf = await PDFDocument.load(pdfBytes);
@@ -11,7 +11,7 @@ export async function handleExtraction(event, file, intervals) {
     const indices = pdf.getPageIndices();
 
     const base = path.basename(file[0], '.pdf');
-    const dir = path.join(os.homedir(), 'Desktop');
+    const dir = exportPath || path.join(os.homedir(), 'Desktop');
 
     let partCounter = 1;
 

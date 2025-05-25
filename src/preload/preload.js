@@ -5,15 +5,15 @@ const fs = require('fs');
 const api = {
   selectPDFs: () => ipcRenderer.invoke('dialog:openFiles'),
   readFileAsArrayBuffer: (filePath) => fs.promises.readFile(filePath),
-  mergePDFs: (filePaths, fileName) => ipcRenderer.invoke('merge-pdfs', filePaths, fileName),
-  splitFixedPDF: (filePaths, intervals) => ipcRenderer.invoke('split-fixed-pdfs', filePaths, intervals),
-  splitPersonalizedPDF: (filePaths, interval) => ipcRenderer.invoke('split-personalized-pdfs', filePaths, interval),
-  extractionPDF: (filePaths, intervals) => ipcRenderer.invoke('extraction-pdfs', filePaths, intervals),
-  removePDF: (filePaths, intervals) => ipcRenderer.invoke('remove-pdfs', filePaths, intervals),
-  extractionImagesPDF: (filePaths) => ipcRenderer.invoke('extraction-images-pdf', filePaths),
-  watermarkPDF: (filePaths, text, opacity, position, rotation, size) => ipcRenderer.invoke('watermark-pdf', filePaths, text, opacity, position, rotation, size),
+  mergePDFs: (filePaths, fileName, exportPath) => ipcRenderer.invoke('merge-pdfs', filePaths, fileName, exportPath),
+  splitFixedPDF: (filePaths, intervals, exportPath) => ipcRenderer.invoke('split-fixed-pdfs', filePaths, intervals, exportPath),
+  splitPersonalizedPDF: (filePaths, interval, exportPath) => ipcRenderer.invoke('split-personalized-pdfs', filePaths, interval, exportPath),
+  extractionPDF: (filePaths, intervals, exportPath) => ipcRenderer.invoke('extraction-pdfs', filePaths, intervals, exportPath),
+  removePDF: (filePaths, intervals, exportPath) => ipcRenderer.invoke('remove-pdfs', filePaths, intervals, exportPath),
+  watermarkPDF: (filePaths, text, opacity, position, rotation, size, exportPath) => ipcRenderer.invoke('watermark-pdf', filePaths, text, opacity, position, rotation, size, exportPath),
   summaryPDF: (filePaths, language) => ipcRenderer.invoke('summary-pdf', filePaths, language),
   openExternal: (url) => shell.openExternal(url),
+  selectFolder: () => ipcRenderer.invoke('dialog:selectFolder')
 }
 
 if (process.contextIsolated) {

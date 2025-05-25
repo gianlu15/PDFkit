@@ -6,7 +6,7 @@ const { PDFDocument, rgb, StandardFonts, degrees } = require('pdf-lib');
 function getPositionCoords(position, width, height) {
     switch (position) {
         case "top-left": return { x: 50, y: height - 250 };
-        case "top-right": return { x: width - 200, y: height -2350 };
+        case "top-right": return { x: width - 200, y: height - 2350 };
         case "bottom-left": return { x: 50, y: 50 };
         case "bottom-right": return { x: width - 200, y: 50 };
         default: return { x: width / 2 - 50, y: height / 2 - 50 };
@@ -48,8 +48,8 @@ export async function handleWatermark(event, file, text, opacity, position, rota
         }
 
         const base = path.basename(file[0], '.pdf');
-        const dir = path.join(os.homedir(), 'Desktop');
-        const outputPath = path.join(dir, `${base}_watermark.pdf`);
+        const outputDir = exportPath || path.join(os.homedir(), 'Desktop');
+        const outputPath = path.join(outputDir, `${base}_watermark.pdf`);
 
         const outputBytes = await pdf.save();
         await fs.writeFile(outputPath, outputBytes);

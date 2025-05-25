@@ -54,8 +54,13 @@ function MergePage({ onBack }) {
     };
 
     const handleMerge = async () => {
+        const exportPath = localStorage.getItem('exportPath');
+        if (!exportPath) {
+            setResultMessage('Devi prima scegliere una cartella di esportazione dalle impostazioni.');
+            return;
+        }
         try {
-            const success = await window.api.mergePDFs(selectedFiles, filenameInput);
+            const success = await window.api.mergePDFs(selectedFiles, filenameInput, exportPath);
             setResultMessage(success ? t('mergeSuccess') : t('operationError'));
         } catch (err) {
             console.error(err);
@@ -68,7 +73,7 @@ function MergePage({ onBack }) {
             <div className="title-container">
                 <span className="back-icon" onClick={onBack}>
                     <img src={backIcon} alt="Back" />
-                </span>                
+                </span>
                 <Subtitle text={t('mergeDesc')} />
             </div>
             <div className={`select-multiple-PDF ${selectedFiles.length > 0 ? 'active' : ''}`}>

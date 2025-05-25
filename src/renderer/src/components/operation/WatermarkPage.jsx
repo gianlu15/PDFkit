@@ -65,8 +65,13 @@ function WatermarkPage({ onBack }) {
 
 
     const handleWatermark = async () => {
+        const exportPath = localStorage.getItem('exportPath');
+        if (!exportPath) {
+            setResultMessage('Devi prima scegliere una cartella di esportazione dalle impostazioni.');
+            return;
+        }
         try {
-            const success = await window.api.watermarkPDF([selectedFile], text, opacity, postion, rotation, size);
+            const success = await window.api.watermarkPDF([selectedFile], text, opacity, postion, rotation, size, exportPath);
             setResultMessage(success ? t('watermarkSucces') : t('operationError'));
         } catch (err) {
             console.error(err);
