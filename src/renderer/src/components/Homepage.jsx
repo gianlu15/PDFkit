@@ -14,6 +14,7 @@ function Homepage({ onSelectOperation }) {
                 <Subtitle text={t('subtitleHome')} />
             </div>
             <OperationGrid onSelectOperation={onSelectOperation} />
+            xz
         </div>
     )
 }
