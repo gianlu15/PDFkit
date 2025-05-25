@@ -19,6 +19,7 @@ function createWindow() {
     height: 700,
     show: false,
     resizable: false,
+    title: "PDFkit",
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
@@ -42,6 +43,9 @@ function createWindow() {
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
+
+  mainWindow.setTitle("PDFkit");
+
 }
 
 app.whenReady().then(() => {
@@ -50,7 +54,6 @@ app.whenReady().then(() => {
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window)
   })
-
 
   ipcMain.handle('merge-pdfs', handleMerge)
   ipcMain.handle('split-fixed-pdfs', handleSplitFixedInterval)
@@ -77,7 +80,6 @@ app.whenReady().then(() => {
     return result.canceled ? null : result.filePaths[0];
   });
   
-
 
   createWindow()
   
