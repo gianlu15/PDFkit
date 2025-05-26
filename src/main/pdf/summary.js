@@ -7,7 +7,6 @@ const { PDFDocument, StandardFonts } = require('pdf-lib');
 require('dotenv').config();
 
 const API_KEY = process.env.SUMMARY_API_KEY;
-const API_URL = process.env.SUMMARY_WEBSITE;
 
 export async function handleSummary(event, file, language, exportPath) {
   try {
@@ -16,9 +15,11 @@ export async function handleSummary(event, file, language, exportPath) {
     form.append('output_language', language);
     form.append('summary_length', 'long');
 
+    console.log(API_KEY);
+
     const options = {
       method: 'POST',
-      url: API_URL,
+      url: 'https://api.apyhub.com/ai/summarize-documents/file',
       headers: {
         'apy-token': API_KEY,
         ...form.getHeaders()
@@ -55,6 +56,7 @@ export async function handleSummary(event, file, language, exportPath) {
 
     return true;
   } catch (error) {
+    console.log(API_KEY);
     console.error('Errore nel riassunto:', error.response?.data || error.message);
     return false;
   }
