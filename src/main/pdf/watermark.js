@@ -22,7 +22,7 @@ function getSize(size) {
     }
 }
 
-export async function handleWatermark(event, file, text, opacity, position, rotation, sizeload) {
+export async function handleWatermark(event, file, text, opacity, position, rotation, sizeload, exportPath) {
     try {
         const pdfBytes = await fs.readFile(file[0]);
         const pdf = await PDFDocument.load(pdfBytes);

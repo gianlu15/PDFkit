@@ -43,8 +43,6 @@ function createWindow() {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
 
-  if (!is.dev) mainWindow.webContents.on('devtools-opened', () => mainWindow.webContents.closeDevTools());
-
 
 }
 

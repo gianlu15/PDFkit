@@ -15,8 +15,6 @@ export async function handleSummary(event, file, language, exportPath) {
     form.append('output_language', language);
     form.append('summary_length', 'long');
 
-    console.log(API_KEY);
-
     const options = {
       method: 'POST',
       url: 'https://api.apyhub.com/ai/summarize-documents/file',
@@ -56,7 +54,6 @@ export async function handleSummary(event, file, language, exportPath) {
 
     return true;
   } catch (error) {
-    console.log(API_KEY);
     console.error('Errore nel riassunto:', error.response?.data || error.message);
     return false;
   }
