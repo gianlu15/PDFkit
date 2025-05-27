@@ -106,4 +106,26 @@ This project is licensed under the [MIT License](./LICENSE).
 
 The main idea behind this project is to implement as many PDF-related features as possible, combining both offline operations—powered by internal libraries that allow maximum customization of common tasks (e.g., advanced merging like interleaved merge)—and online features that leverage external APIs to enable AI-powered operations, such as automatic summarization.
 This hybrid approach aims to provide users with a powerful, flexible, and modern desktop tool for PDF editing.
+
+Planned features include:
+
+- Interleaved Merge – Alternate pages from multiple PDFs (e.g., A1, B1, A2, B2…).
+
+- Page Duplication – Duplicate specific pages multiple times.
+
+- Custom Crop – Crop pages by margins or coordinates.
+
+- Page Numbering – Add page numbers with format, position, and exclusion options.
+
+- Visual Reordering – Drag and drop to rearrange pages before merging.
+
+- Keyword-based Extraction/Removal – Extract or remove pages containing specific words.
+
+- Split by Bookmarks – Automatically split PDF based on section titles or bookmarks.
+
+- PDF Protection – Set password or restrict printing/editing/copying.
+  
+- AI-assisted Translation – Use content analysis to translate.
+  
+
 Pull requests, ideas, and feedback are always welcome. Feel free to open an issue or fork the repository to contribute!
