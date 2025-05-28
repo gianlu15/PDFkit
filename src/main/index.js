@@ -1,7 +1,8 @@
-import { app, shell, BrowserWindow, ipcMain, dialog } from 'electron'
+import { app, shell, BrowserWindow, ipcMain, dialog, Menu } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/logo.png?asset'
+
 
 // Import dei moduli PDF
 import { handleMerge } from './pdf/merge.js'
@@ -19,6 +20,7 @@ function createWindow() {
     height: 700,
     show: false,
     resizable: false,
+    titleBarStyle: 'hidden',
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
@@ -42,6 +44,8 @@ function createWindow() {
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
+
+  if (!is.dev) mainWindow.webContents.on('devtools-opened', () => mainWindow.webContents.closeDevTools());
 
 
 }
@@ -80,8 +84,11 @@ app.whenReady().then(() => {
   
 
   createWindow()
+ 
+  const defaultMenu = Menu.getApplicationMenu();
+  const customMenu = defaultMenu.items.filter(item => item.label !== 'View' && item.label !== 'Edit');
+  Menu.setApplicationMenu(Menu.buildFromTemplate(customMenu));
   
-
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
